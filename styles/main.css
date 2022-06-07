@@ -1,0 +1,411 @@
+::-moz-selection {
+   /* Code for Firefox */
+   color: white;
+   background: #EF9610;
+}
+
+::selection {
+   color: white;
+   background: #EF9610;
+}
+
+body {
+   background: #101010 url("../assets/images/bg-blur.png") no-repeat center top;
+   background-size: cover;
+   color: white;
+}
+
+.nav-link {
+   color: rgb(255, 255, 255) !important;
+   transition: all 0.3s ease-in-out;
+}
+.nav-link.active {
+   color: rgb(255, 255, 255) !important;
+   font-weight: 700;
+}
+.nav-link:hover {
+   font-size: 19px;
+}
+
+.kopeey-menu {
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+   margin-left: 24px;
+}
+
+.hero-title {
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 56px;
+   font-weight: 700;
+}
+
+.hero-paragraph {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 30px;
+}
+
+.btn-beli-sekarang {
+   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-position: left;
+   background-size: 200%;
+   border-radius: 32px;
+   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 22px;
+   font-weight: 700;
+   transition: all 0.3s ease-in-out;
+}
+.btn-beli-sekarang:hover {
+   background-position: right;
+   color: white;
+   font-size: 23px;
+}
+
+.hero-image {
+   max-width: 100%;
+   height: auto;
+   margin-top: -30px;
+}
+
+.hero-glass {
+   position: absolute;
+   top: 0;
+   right: 8%;
+   width: 40%;
+   height: 640px;
+   background: linear-gradient(167.7deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.02) 90.89%);
+   -webkit-backdrop-filter: blur(40px);
+           backdrop-filter: blur(40px);
+   border-radius: 0 0 2000px 2000px;
+   z-index: -1;
+}
+
+.categories {
+   margin-top: 120px;
+   margin-bottom: 190px;
+}
+
+
+
+
+/* BEGIN : CATEGORY BUTTON */
+
+/* Customize the label (the container) */
+.category-container {
+   display: block;
+   position: relative;
+   cursor: pointer;
+   font-size: 22px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+/* Hide the browser's default radio */
+.category-container input {
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
+}
+
+/* (Unchecked) Create a custom radio */
+.btn-categories {
+   width: 90%;
+   background: none;
+   border-radius: 24px;
+   color: white;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+/* When the radio is checked, do... */
+.category-container:hover input~.btn-categories {
+   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 0.4);
+   border-left: 1px solid rgba(255, 255, 255, 0.4);
+   border-right: 0;
+   border-bottom: 0;
+   border-radius: 24px;
+   color: white;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 18.5px;
+   font-weight: 500;
+}
+
+/* (Checked) When the radio is checked, do... */
+.category-container input:checked ~ .btn-categories {
+   width: 90%;
+   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 0.4);
+   border-left: 1px solid rgba(255, 255, 255, 0.4);
+   border-right: 0;
+   border-bottom: 0;
+   border-radius: 24px;
+   color: white;
+   font-family: 'Maven Pro',
+   sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.btn-categories:after {
+   content: "";
+   position: absolute;
+   display: none;
+}
+
+/* Show the checkmark when checked */
+.category-container input:checked ~ .btn-categories:after {
+   display: block;
+}
+
+/* END : CATEGORY BUTTON */
+
+
+
+
+
+.card-container {
+   margin-bottom: 200px;
+}
+
+.product-card-container {
+   height: 100%;
+}
+
+.product-card {
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(143.39deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 0.4);
+   border-left: 1px solid rgba(255, 255, 255, 0.4);
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   -webkit-backdrop-filter: blur(40px);
+           backdrop-filter: blur(40px);
+   border-radius: 36px;
+   padding-left: 16px;
+   padding-right: 16px;
+   transform: perspective(1000px);
+   transform-style: preserve-3d;
+}
+
+.product-category {
+   width: -webkit-fit-content;
+   width: -moz-fit-content;
+   width: fit-content;
+   background: #101010;
+   border: 0;
+   border-radius: 12px;
+   color: white;
+   cursor: text;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 12px;
+   font-weight: 500;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 16px;
+   padding-right: 16px;
+} .product-category:hover { color: white; }
+
+.product-name a {
+   position: relative;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+} .product-name a:hover { font-size: 24.5px; }
+
+.product-price {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 28px;
+   font-weight: 700;
+}
+
+.btn-cart {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-position: left;
+   background-size: 200%;
+   border-radius: 32px;
+   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   color: white;
+   font-size: 28px;
+   line-height: 50px;
+   margin-top: -30px;
+   transition: all 0.3s ease-in-out;
+}
+.btn-cart:hover {
+   background-position: right;
+   color: white;
+   font-size: 29px;
+}
+
+.product-image {
+   height: 330px;
+   margin-top: -80px;
+}
+
+.footer {
+   background-color: #101010;
+   margin-top: 160px;
+   padding-top: 100px;
+   padding-bottom: 50px;
+}
+
+.footer-group-name {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.footer-link a {
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+} .footer-link a:hover { color: #EF9610; }
+
+.footer-link a i {
+   color: white;
+   font-size: 32px;
+   margin-right: 12px;
+} .footer-link a:hover i { color: #EF9610; }
+
+.footer-copyright {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+   margin-top: 120px;
+}
+
+.footer-copyright span {
+   color: #EF9610;
+}
+
+.btn-outline-admin {
+   background-color: transparent;
+   border: 1px solid white;
+   border-radius: 30px;
+   transition: all 0.3s ease-in-out;
+}
+.btn-outline-admin:hover {
+   background-color: white;
+}
+.btn-outline-admin:hover a {
+   color: black !important;
+}
+
+.my-label {
+   width: fit-content;
+   background: #101010;
+   border: 0;
+   border-radius: 30px;
+   color: white;
+   cursor: text;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   padding-left: 6px;
+   padding-right: 6px;
+}
+
+.my-label-orange {
+   background: #ED7B00;
+}
+
+
+
+/* BREAKPOINTS */
+
+/* [XXL] Extra Extra large devices | 1400px < | */
+@media only screen and (min-width: 1400px) {
+   .hero-glass {
+      right: 14%;
+      width: 36%;
+   }
+}
+
+/* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
+@media only screen and (max-width: 1400px) {}
+
+/* [LG] Large devices (laptops/desktops) | < 1200px | */
+@media only screen and (max-width: 1200px) {
+   .hero-glass {
+      right: 6%;
+      width: 40%;
+   }
+   .footer {
+      margin-top: 40px;
+   }
+}
+
+/* [MD] Medium devices (landscape tablets) | < 992px | */
+@media only screen and (max-width: 992px) {
+   .hero-glass {
+      display: none;
+   }
+   .hero-image {
+      margin-top: 60px;
+      max-width: 90%;
+   }
+   .categories {
+      margin-top: 80px;
+   }
+   .card-container {
+      margin-bottom: 180px;
+   }
+}
+
+/* [SM] Small devices (portrait tablets and large phones) | < 768px | */
+@media only screen and (max-width: 768px) {
+   .card-container {
+      margin-bottom: 160px;
+   }
+}
+
+/* [XS] Extra small devices (phones) | < 576px | */
+@media only screen and (max-width: 576px) {
+   body {
+      background: #101010 url("../assets/images/bg-blur.png") no-repeat ;
+      background-size: cover;
+      color: white;
+   }
+   .product-image {
+      height: 290px;
+      margin-top: -40px;
+   }
+   .card-container {
+      margin-bottom: 110px;
+   }
+   .product-catalogues {
+      margin-left: 0;
+      margin-right: 0;
+   }
+   .hero-title {
+      font-size: 44px;
+   }
+   .hero-paragraph {
+      font-size: 16px;
+      line-height: 26px;
+   }
+   .categories {
+      margin-top: 80px;
+      margin-bottom: 100px;
+   }
+   .footer {
+      padding-top: 70px;
+   }
+}

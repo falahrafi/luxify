@@ -1,0 +1,132 @@
+/* Ellipse Elements */
+.ellipse-container {
+   width: 100%;
+   height: 100%;
+}
+.ellipse-element {
+   position: absolute;
+}
+.ellipse-b-l { top: 106%; left: 2%; z-index: -1;}
+.ellipse-b-r { top: 54%; right: 3%; z-index: -1;}
+.ellipse-b-t { top: 34%; left: 44%; z-index: -1;}
+.ellipse-s-l-o { top: 138%; left: 5%; z-index: 10; }
+.ellipse-s-l-w { top: 130%; left: 2%; z-index: 10; }
+.ellipse-s-r-w { top: 90%; right: 6%; z-index: 10; }
+.ellipse-s-t-w { top: 28%; left: 56%; z-index: 10; }
+
+.contact-card {
+   background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   -webkit-backdrop-filter: blur(30px);
+           backdrop-filter: blur(30px);
+   border-radius: 46px;
+   border-top: 2px solid rgba(255, 255, 255, 0.4);
+   border-left: 2px solid rgba(255, 255, 255, 0.4);
+   margin-top: 140px;
+   padding-bottom: 100px;
+   padding-top: 100px;
+}
+
+.contact h2 {
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 42px;
+   font-weight: 700;
+   margin-bottom: 58px;
+}
+
+.contact label {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.contact-input {
+   min-height: 50px;
+   background: rgba(255, 255, 255, 0.25);
+   border: 0;
+   border-radius: 25px;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   margin-bottom: 24px;
+   margin-top: 12px;
+   transition: all .3s ease-in-out;
+}
+
+.contact-input:active {
+   
+}
+
+.contact-input:focus {
+   background: rgba(0, 0, 0, 0.15);
+   box-shadow: 0 5px 30px 0px rgba(255, 255, 255, 0.2);
+   caret-color: #ED7B00;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+}
+
+.contact-input:hover {
+   background: rgba(0, 0, 0, 0.1);
+}
+
+.btn-kirim-pesan {
+   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-position: left;
+   background-size: 200%;
+   border-radius: 32px;
+   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 22px;
+   font-weight: 700;
+   margin-top: 16px;
+   transition: all 0.3s ease-in-out;
+}
+.btn-kirim-pesan:hover {
+   background-position: right;
+   color: white;
+   font-size: 23px;
+}
+
+.contact-illustration {
+   margin-top: 130px;
+}
+
+
+
+/* BREAKPOINTS */
+
+/* [XXL] Extra Extra large devices | 1400px < | */
+@media only screen and (min-width: 1400px) {}
+
+/* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
+@media only screen and (max-width: 1400px) {}
+
+/* [LG] Large devices (laptops/desktops) | < 1200px | */
+@media only screen and (max-width: 1200px) {}
+
+/* [MD] Medium devices (landscape tablets) | < 992px | */
+@media only screen and (max-width: 992px) {}
+
+/* [SM] Small devices (portrait tablets and large phones) | < 768px | */
+@media only screen and (max-width: 768px) {}
+
+/* [XS] Extra small devices (phones) | < 576px | */
+@media only screen and (max-width: 576px) {
+   .ellipse-b-l { top: 104%; left: 2%; }
+   .ellipse-b-r { display: none; }
+   .ellipse-b-t { top: 28%; left: 34%; }
+   .ellipse-s-l-o { display: none; }
+   .ellipse-s-l-w { display: none; }
+   .ellipse-s-r-w { top: 88%; right: 6%; z-index: 0; }
+   .ellipse-s-t-w { top: 22%; left: 56%; z-index: 0; }
+
+   .contact-card {
+      margin-top: 80px;
+      padding-bottom: 70px;
+      padding-top: 70px;
+   }
+}

@@ -1,0 +1,189 @@
+/* Warna Label / Teks */
+#productTable_wrapper label {
+   color: #101010;
+}
+#galleryTable_wrapper label {
+   color: #101010;
+}
+#messageTable_wrapper label {
+   color: #101010;
+}
+
+
+/* Warna Pagination */
+.page-item .page-link {
+   background-color: #101010;
+   color: white;
+   transition: all 0.2s ease-in-out;
+}
+.page-item:hover .page-link {
+   background-color: #363636;
+   color: white;
+   font-size: 17.5px;
+}
+.page-item.disabled .page-link {
+   background-color: #3b3b3b;
+   color: #9c9c9c;
+}
+.page-item.disabled:hover .page-link {
+   font-size: 16px;
+}
+.page-item.active .page-link {
+   background-color: #ED7B00;
+   border-color: white;
+   color: white;
+}
+
+
+/* Layouting Pagination */
+.dataTables_wrapper {
+   position: relative;
+   text-align: center;
+}
+.dataTables_length,
+.dataTables_paginate,
+.dataTables_filter {
+   display: inline-block;
+}
+.dataTables_filter {
+   position: absolute;
+   right: 0;
+}
+.dataTables_length {
+   position: absolute;
+   left: 0;
+}
+.dataTable {
+   text-align: left !important;
+}
+
+
+
+
+
+/* Merapikan Bagian Atas Tabel (Panjang baris & Search) */
+
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label {
+   font-weight: normal;
+   text-align: left;
+   white-space: nowrap;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+   text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+   width: auto;
+   display: inline-block;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+   margin-left: 0.5em;
+   display: inline-block;
+   width: auto;
+}
+
+
+
+table.dataTable>thead .sorting,
+table.dataTable>thead .sorting_asc,
+table.dataTable>thead .sorting_desc,
+table.dataTable>thead .sorting_asc_disabled,
+table.dataTable>thead .sorting_desc_disabled {
+   cursor: pointer;
+   position: relative;
+}
+
+
+
+
+/* Menambah icon sorting */
+
+table.dataTable>thead .sorting:before,
+table.dataTable>thead .sorting:after,
+table.dataTable>thead .sorting_asc:before,
+table.dataTable>thead .sorting_asc:after,
+table.dataTable>thead .sorting_desc:before,
+table.dataTable>thead .sorting_desc:after,
+table.dataTable>thead .sorting_asc_disabled:before,
+table.dataTable>thead .sorting_asc_disabled:after,
+table.dataTable>thead .sorting_desc_disabled:before,
+table.dataTable>thead .sorting_desc_disabled:after {
+   position: absolute;
+   bottom: 0.9em;
+   display: block;
+   opacity: .3;
+}
+
+table.dataTable>thead .sorting_asc:before {
+   opacity: 1;
+}
+table.dataTable>thead .sorting_desc:after {
+   opacity: 1;
+}
+
+table.dataTable>thead .sorting::before,
+table.dataTable>thead .sorting_asc::before,
+table.dataTable>thead .sorting_desc::before,
+table.dataTable>thead .sorting_asc_disabled::before,
+table.dataTable>thead .sorting_desc_disabled::before {
+   right: 1em;
+   content: "↑";
+}
+table.dataTable>thead .sorting::after,
+table.dataTable>thead .sorting_asc::after,
+table.dataTable>thead .sorting_desc::after,
+table.dataTable>thead .sorting_asc_disabled::after,
+table.dataTable>thead .sorting_desc_disabled::after {
+   right: 0.5em;
+   content: "↓";
+}
+
+
+
+
+
+/* BREAKPOINTS */
+
+/* [XXL] Extra Extra large devices | 1400px < | */
+@media only screen and (min-width: 1400px) {}
+
+/* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
+@media only screen and (max-width: 1400px) {}
+
+/* [LG] Large devices (laptops/desktops) | < 1200px | */
+@media only screen and (max-width: 1200px) {}
+
+/* [MD] Medium devices (landscape tablets) | < 992px | */
+@media only screen and (max-width: 992px) {}
+
+/* [SM] Small devices (portrait tablets and large phones) | < 768px | */
+@media only screen and (max-width: 768px) {
+
+   /* Layouting Pagination */
+   .dataTables_wrapper {
+      text-align: left;
+   }
+   .dataTables_length,
+   .dataTables_paginate,
+   .dataTables_filter {
+      display: block;
+      text-align: center!important;
+   }
+   .dataTables_filter {
+      position: static;
+      text-align: center;
+   }
+   .dataTables_length {
+      position: static;
+      text-align: center;
+   }
+   .pagination {
+      justify-content: center;
+   }
+}
+
+/* [XS] Extra small devices (phones) | < 576px | */
+@media only screen and (max-width: 576px) {}

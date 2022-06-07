@@ -1,0 +1,248 @@
+.product-detail-card {
+   background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(30px);
+   border-radius: 46px;
+   border-top: 2px solid rgba(255, 255, 255, 0.4);
+   border-left: 2px solid rgba(255, 255, 255, 0.4);
+   margin-top: 80px;
+}
+
+.product-info {
+   background: rgba(0, 0, 0, 0.3);
+   border-radius: 0 46px 46px 0;
+   padding-top: 90px;
+   padding-bottom: 90px;
+   padding-left: 60px;
+   padding-right: 40px;
+}
+
+.product-info-category {
+   width: fit-content;
+   background: #101010;
+   border: 0;
+   border-radius: 30px;
+   color: white;
+   cursor: text;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 16px;
+   padding-right: 16px;
+} .product-info-category:hover { color: white; }
+
+.product-info h2 {
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 42px;
+   font-weight: 700;
+}
+
+.product-info-price {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 32px;
+   font-weight: 700;
+}
+
+.product-info-price span {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+.product-info h4 {
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+
+
+/* BEGIN : USER OPTIONS BUTTON */
+
+/* Customize the label (the container) */
+.options-container {
+   display: block;
+   position: relative;
+   cursor: pointer;
+   font-size: 22px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+/* Hide the browser's default radio */
+.options-container input {
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
+}
+
+/* (Unchecked) Create a custom radio */
+.btn-options {
+   width: 90%;
+   background: rgba(0, 0, 0, 0.2);
+   border-radius: 24px;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 600;
+   transition: all 0.3s ease-in-out;
+}
+
+/* When the radio is checked, do... */
+.options-container:hover input~.btn-options {
+   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 0.4);
+   border-left: 1px solid rgba(255, 255, 255, 0.4);
+   border-right: 0;
+   border-bottom: 0;
+   border-radius: 24px;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18.5px;
+   font-weight: 600;
+}
+
+/* (Checked) When the radio is checked, do... */
+.options-container input:checked~.btn-options {
+   width: 90%;
+   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 0.4);
+   border-left: 1px solid rgba(255, 255, 255, 0.4);
+   border-right: 0;
+   border-bottom: 0;
+   border-radius: 24px;
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 600;
+   transition: all 0.3s ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.btn-options:after {
+   content: "";
+   position: absolute;
+   display: none;
+}
+
+/* Show the checkmark when checked */
+.options-container input:checked~.btn-options:after {
+   display: block;
+}
+
+/* END : USER OPTIONS BUTTON */
+
+
+
+.product-info p {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 27px;
+}
+
+.product-detail-image {
+   max-height: 80%;
+}
+
+.product-detail-image-container {
+   padding-top: 50px;
+   padding-bottom: 30px;
+}
+
+.product-detail-image-container i {
+   font-size: 32px;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-masukkan-keranjang {
+   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-position: left;
+   background-size: 200%;
+   border-radius: 32px;
+   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   color: white;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 22px;
+   font-weight: 700;
+   transition: all 0.3s ease-in-out;
+}
+
+.btn-masukkan-keranjang:hover {
+   background-position: right;
+   color: white;
+   font-size: 23px;
+}
+
+
+
+
+/* BREAKPOINTS */
+
+/* [XXL] Extra Extra large devices | 1400px < | */
+@media only screen and (min-width: 1400px) {}
+
+/* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
+@media only screen and (max-width: 1400px) {}
+
+/* [LG] Large devices (laptops/desktops) | < 1200px | */
+@media only screen and (max-width: 1200px) {}
+
+/* [MD] Medium devices (landscape tablets) | < 992px | */
+@media only screen and (max-width: 992px) {
+   .product-detail-image {
+      width: 58%;
+   }
+   .product-detail-image-container {
+      padding-top: 80px;
+   }
+   .product-detail-card {
+      margin-left: 6%;
+      margin-right: 6%;
+   }
+}
+
+/* [SM] Small devices (portrait tablets and large phones) | < 768px | */
+@media only screen and (max-width: 768px) {}
+
+/* [XS] Extra small devices (phones) | < 576px | */
+@media only screen and (max-width: 576px) {
+   .product-info {
+      padding-top: 70px;
+      padding-bottom: 70px;
+      padding-left: 30px;
+      padding-right: 30px;
+   }
+   .product-info h2 {
+      font-size: 36px;
+   }
+   .product-info-category {
+      font-size: 16px;
+   }
+   .product-info-price {
+      font-size: 28px;
+   }
+   .product-info-price span {
+      font-size: 12px;
+   }
+   .product-detail-card {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 24px;
+   }
+   .product-detail .container {
+      padding-left: 0;
+      padding-right: 0;
+   }
+   .btn-masukkan-keranjang {
+      font-size: 18px;
+   }
+   .btn-masukkan-keranjang:hover {
+      font-size: 19px;
+   }
+}
