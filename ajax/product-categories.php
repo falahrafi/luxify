@@ -32,7 +32,7 @@
          <div>
             <img src="<?= $product['image']; ?>" alt="" class="product-image">
          </div>
-         <div class="btn product-category mb-1">
+         <div class="btn product-category mb-2">
             <?= $product['category']; ?>
          </div>
          <div class="product-name mb-1">

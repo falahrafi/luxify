@@ -1,12 +1,12 @@
 ::-moz-selection {
    /* Code for Firefox */
-   color: white;
-   background: #EF9610;
+   color: #16c1ff;
+   background: #242e79;
 }
 
 ::selection {
-   color: white;
-   background: #EF9610;
+   color: #16c1ff;
+   background: #242e79;
 }
 
 body {
@@ -27,6 +27,67 @@ body {
    font-size: 19px;
 }
 
+.navbar-toggler {
+   border: none;
+}.navbar-toggler:focus {
+   border: none;
+}.navbar-toggler:hover {
+   box-shadow: none;
+}
+
+
+
+/* BEGIN: Hamburger Animated Menu */
+
+.hamburger-menu-container {
+   transition: all .5s ease-in-out;
+}
+
+.hamburger-menu-animated {
+   width: 42px;
+   height: 6px;
+   border-radius: 30px;
+   background-image: linear-gradient(to right, #2D388A, #00AEEF);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
+   cursor: pointer;
+   transition: all .5s ease-in-out;
+}
+
+.hamburger-menu-animated::before,
+.hamburger-menu-animated::after {
+   content: '';
+   position: absolute;
+   width: 42px;
+   height: 6px;
+   border-radius: 30px;
+   background-image: linear-gradient(to right, #2D388A, #00AEEF);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
+   transition: all .5s ease-in-out;
+}
+
+.hamburger-menu-animated::before {
+   transform: translate(-8px,-14px);
+}
+.hamburger-menu-animated::after{
+   transform: translate(-8px,14px);
+}
+
+.hamburger-menu-container.open .hamburger-menu-animated {
+   transform: translateX(-50px);
+   background: transparent;
+   box-shadow: none;
+}
+.hamburger-menu-container.open .hamburger-menu-animated::before {
+   transform: rotate(45deg) translate(35px,-35px);
+}
+.hamburger-menu-container.open .hamburger-menu-animated::after {
+   transform: rotate(-45deg) translate(35px,35px);
+}
+
+/* END: Hamburger Animated Menu */
+
+
+
 .kopeey-menu {
    font-family: 'Maven Pro', sans-serif;
    font-size: 18px;
@@ -36,7 +97,7 @@ body {
 
 .hero-title {
    font-family: 'Maven Pro', sans-serif;
-   font-size: 56px;
+   font-size: 52px;
    font-weight: 700;
 }
 
@@ -52,7 +113,7 @@ body {
    background-position: left;
    background-size: 200%;
    border-radius: 32px;
-   box-shadow: 0 5px 30px 0px rgba(45, 56, 138, 0.3);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
    color: white;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 22px;
@@ -81,6 +142,7 @@ body {
    -webkit-backdrop-filter: blur(40px);
            backdrop-filter: blur(40px);
    border-radius: 0 0 2000px 2000px;
+   box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.05);
    z-index: -1;
 }
 
@@ -117,42 +179,33 @@ body {
 /* (Unchecked) Create a custom radio */
 .btn-categories {
    width: 90%;
-   background: none;
-   border-radius: 24px;
-   color: white;
    font-family: 'Maven Pro', sans-serif;
    font-size: 18px;
-   font-weight: 500;
+   font-weight: 700;
 }
 
-/* When the radio is checked, do... */
+/* When the radio is hovered, do... */
 .category-container:hover input~.btn-categories {
-   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-   border-top: 1px solid rgba(255, 255, 255, 0.4);
-   border-left: 1px solid rgba(255, 255, 255, 0.4);
-   border-right: 0;
-   border-bottom: 0;
+   background: linear-gradient(90deg, #00A1FF 0%, #00FF8F 100%);
+   border-width: 0px;
    border-radius: 24px;
    color: white;
    font-family: 'Maven Pro', sans-serif;
    font-size: 18.5px;
-   font-weight: 500;
+   font-weight: 700;
 }
 
 /* (Checked) When the radio is checked, do... */
 .category-container input:checked ~ .btn-categories {
    width: 90%;
-   background: linear-gradient(95.58deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-   border-top: 1px solid rgba(255, 255, 255, 0.4);
-   border-left: 1px solid rgba(255, 255, 255, 0.4);
-   border-right: 0;
-   border-bottom: 0;
+   background: linear-gradient(90deg, #00A1FF 0%, #00FF8F 100%);
+   border-width: 0px;
    border-radius: 24px;
    color: white;
    font-family: 'Maven Pro',
    sans-serif;
    font-size: 18px;
-   font-weight: 500;
+   font-weight: 700;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -184,10 +237,10 @@ body {
 .product-card {
    width: 100%;
    height: 100%;
-   background: linear-gradient(143.39deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-   border-top: 1px solid rgba(255, 255, 255, 0.4);
-   border-left: 1px solid rgba(255, 255, 255, 0.4);
-   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   background: linear-gradient(143.39deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 100%, rgba(255, 255, 255, 0.4) 100%);
+   border-top: 1px solid rgba(255, 255, 255, 1);
+   border-bottom: 1px solid rgba(0, 161, 255, 0.4);
+   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
    -webkit-backdrop-filter: blur(40px);
            backdrop-filter: blur(40px);
    border-radius: 36px;
@@ -201,23 +254,23 @@ body {
    width: -webkit-fit-content;
    width: -moz-fit-content;
    width: fit-content;
-   background: #101010;
+   background: linear-gradient(90deg, #00AEEF 0%, #00FF8F 100%);
    border: 0;
-   border-radius: 12px;
+   border-radius: 30px;
    color: white;
    cursor: text;
    font-family: 'Maven Pro', sans-serif;
-   font-size: 12px;
-   font-weight: 500;
-   padding-top: 3px;
-   padding-bottom: 3px;
+   font-size: 14px;
+   font-weight: 700;
+   padding-top: 2px;
+   padding-bottom: 2px;
    padding-left: 16px;
    padding-right: 16px;
 } .product-category:hover { color: white; }
 
 .product-name a {
    position: relative;
-   color: white;
+   color: #1d1d1d;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 24px;
    font-weight: 600;
@@ -235,11 +288,12 @@ body {
    position: relative;
    width: 60px;
    height: 60px;
-   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
-   background-position: left;
-   background-size: 200%;
+   background-image: linear-gradient(to right top, #2D388A, #00AEEF, #00AEEF, #2D388A);
+   background-position: left bottom;
+   background-size: 1000%;
+   border-width: 0px;
    border-radius: 32px;
-   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
    color: white;
    font-size: 28px;
    line-height: 50px;
@@ -247,7 +301,7 @@ body {
    transition: all 0.3s ease-in-out;
 }
 .btn-cart:hover {
-   background-position: right;
+   background-position: right top;
    color: white;
    font-size: 29px;
 }
@@ -258,16 +312,20 @@ body {
 }
 
 .footer {
-   background-color: #101010;
+   background: linear-gradient(85.02deg, #2D388A 0%, #2B8DC6 55.21%, #00FF8F 100%);
    margin-top: 160px;
    padding-top: 100px;
-   padding-bottom: 50px;
+}
+
+.footer .hero-paragraph {
+   color: white !important;
 }
 
 .footer-group-name {
    font-family: 'Nunito Sans', sans-serif;
    font-size: 20px;
    font-weight: 700;
+   color: white !important;
 }
 
 .footer-link a {
@@ -276,36 +334,45 @@ body {
    font-size: 18px;
    font-weight: 400;
    text-decoration: none;
-} .footer-link a:hover { color: #EF9610; }
+   transition: all 0.3s ease-in-out;
+} .footer-link a:hover { font-weight: 700; }
 
 .footer-link a i {
    color: white;
    font-size: 32px;
    margin-right: 12px;
-} .footer-link a:hover i { color: #EF9610; }
+   transition: all 0.3s ease-in-out;
+} .footer-link a:hover i { font-size: 34px; }
 
 .footer-copyright {
    font-family: 'Nunito Sans', sans-serif;
    font-size: 20px;
    font-weight: 700;
-   margin-top: 120px;
+   color: white !important;
+   background: rgba(0, 0, 0, 0.2);
+   padding: 24px 0 24px;
 }
 
 .footer-copyright span {
-   color: #EF9610;
+   font-weight: 700;
 }
 
 .btn-outline-admin {
    background-color: transparent;
-   border: 1px solid white;
+   border: 1px solid #1A69B4;
    border-radius: 30px;
    transition: all 0.3s ease-in-out;
 }
 .btn-outline-admin:hover {
-   background-color: white;
+   border: none;
+   background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
+}
+
+.btn-outline-admin a {
+   color: #1A69B4 !important;
 }
 .btn-outline-admin:hover a {
-   color: black !important;
+   color: white !important;
 }
 
 .my-label {
@@ -324,6 +391,25 @@ body {
 
 .my-label-orange {
    background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
+}
+
+.dropdown-menu {
+   border: 1px solid #1A69B4;
+   border-radius: 16px;
+   box-shadow: 0 6px 30px 0px rgba(26, 105, 180, .1);
+   background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+   padding: 16px;
+}
+
+.dropdown-item {
+   border-radius: 30px;
+   color: #1d1d1d;
+}
+.dropdown-item:hover {
+   background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
+   border-radius: 30px;
+   color: white;
+   transition: all 0.3s ease-in-out;
 }
 
 
@@ -354,6 +440,12 @@ body {
 
 /* [MD] Medium devices (landscape tablets) | < 992px | */
 @media only screen and (max-width: 992px) {
+   .navbar-collapse {
+      margin-top: 8px;
+   }
+   .nav-item {
+      padding-bottom: 2px;
+   }
    .hero-glass {
       display: none;
    }
@@ -367,6 +459,9 @@ body {
    .card-container {
       margin-bottom: 180px;
    }
+   .dropdown-menu {
+      margin-bottom: 16px;
+   }
 }
 
 /* [SM] Small devices (portrait tablets and large phones) | < 768px | */
@@ -379,9 +474,13 @@ body {
 /* [XS] Extra small devices (phones) | < 576px | */
 @media only screen and (max-width: 576px) {
    body {
-      background: #101010 url("../assets/images/bg-blur.png") no-repeat ;
+      background: #F5F5F5 url("../assets/images/bg-blur.png") no-repeat ;
       background-size: cover;
-      color: white;
+      color: #1d1d1d;
+   }
+   .container {
+      padding-left: 24px;
+      padding-right: 24px;
    }
    .product-image {
       height: 290px;
@@ -407,5 +506,6 @@ body {
    }
    .footer {
       padding-top: 70px;
+      background: linear-gradient(to right top, #2D388A 0%, #2B8DC6 55.21%, #00FF8F 100%);
    }
 }

@@ -27,13 +27,15 @@ require_once 'cart/cart-quantity.php';
 
 <body>
 
-   <nav class="navbar navbar-expand-lg navbar-dark">
+   <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container py-4">
          <a class="navbar-brand" href="index.php">
-            <img src="assets/images/luxify-logo-text.png" alt="" height="42">
+            <img src="assets/images/luxify-logo-text.png" alt="" height="44">
          </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <div class="hamburger-menu-container">
+               <div class="hamburger-menu-animated"></div>
+            </div>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 kopeey-menu">
@@ -42,8 +44,8 @@ require_once 'cart/cart-quantity.php';
                      Products
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarProducts">
-                     <li><a href="index.php#category-men" class="btn-arabica dropdown-item" >Luxify for Men</a></li>
-                     <li><a href="index.php#category-women" class="btn-liberica dropdown-item" >Luxify for Women</a></li>
+                     <li><a href="index.php#category-men" class="btn-arabica dropdown-item">Luxify for Men</a></li>
+                     <li><a href="index.php#category-women" class="btn-liberica dropdown-item">Luxify for Women</a></li>
                   </ul>
                </li>
                <li class="nav-item dropdown">
@@ -80,12 +82,12 @@ require_once 'cart/cart-quantity.php';
    <section class="kopeey-hero">
       <div class="container">
          <div class="row">
-            <div class="col-lg-5 mt-4 mt-sm-5">
+            <div class="col-lg-5 mt-4 mt-sm-5 pe-3">
                <h1 class="hero-title mb-4 mt-2 mt-sm-3">
-                Tampil Maksimal Dengan Yang Maksimal
+                  Tampil Maksimal Dengan Yang Maksimal
                </h1>
                <p class="hero-paragraph mb-5">
-                Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
+                  Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
                <a href="#categories" class="btn btn-beli-sekarang px-4" role="button">
                   Beli Sekarang &nbsp;
@@ -150,9 +152,9 @@ require_once 'cart/cart-quantity.php';
       <div class="container">
          <div class="row gx-sm-5">
             <div class="col-md-4 mb-5">
-               <img src="assets/images/kopeey-logo-text-light.png" alt="" height="42">
+               <img src="assets/images/luxify-logo-text-full-white.png" alt="" height="42">
                <p class="hero-paragraph mt-4">
-                Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
+                  Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
             </div>
 
@@ -195,15 +197,16 @@ require_once 'cart/cart-quantity.php';
             </div>
          </div>
 
-         <div class="footer-copyright text-center">
-            &copy;2021 <span>Luxify .</span> All right reserved.
-         </div>
+      </div>
+      <div class="footer-copyright text-center">
+         &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
       </div>
    </section>
 
    <script type="text/javascript" src="libraries/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="libraries/vanilla-tilt.js"></script>
    <script type="text/javascript" src="scripts/tilt-effect.js"></script>
+   <script type="text/javascript" src="scripts/hamburger-menu.js"></script>
    <script src="libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
    <script src="scripts/ajax-categories.js"></script>
 </body>
