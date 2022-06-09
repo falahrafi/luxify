@@ -6,12 +6,12 @@
    // Menghasilkan variabel '$cartQuantityAll'
    require_once 'cart/cart-quantity.php'; 
 
-   $coffeeID = $_GET["id"];
+   $productID = $_GET["id"];
 
-   $sql = "SELECT coffees.id AS 'coffeeID', coffees.name, coffees.category, coffees.price,
-                   coffees.description, galleries.image, galleries.type
-            FROM coffees INNER JOIN galleries ON coffees.id = galleries.coffee_id
-            WHERE coffees.id = $coffeeID;";
+   $sql = "SELECT products.id AS 'productID', products.name, products.category, products.price,
+                   products.description, galleries.image, galleries.type
+            FROM products INNER JOIN galleries ON products.id = galleries.product_id
+            WHERE products.id = $productID;";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];
@@ -141,7 +141,7 @@
                   <div class="col-12 mb-5">
                      <div class="product-info-price">
                         <?= "Rp. " . number_format($coffee['price'],0,',','.'); ?>
-                        <span> / 250 gr</span>
+                        <span> / 50 ml</span>
                      </div>
                   </div>
 
@@ -153,65 +153,25 @@
                   <!-- Pilihan Berat -->
                   <div class="col-lg-3 mb-lg-0 mb-3 product-info-weights">
                      <label class="options-container">
-                        <input type="radio" name="weights" value="250 gr" checked>
+                        <input type="radio" name="weights" value="50 ml" checked>
                         <div class="btn btn-options">
-                           250 gr
+                           50 ml
                         </div>
                      </label>
                   </div>
                   <div class="col-lg-3 mb-lg-0 mb-3 product-info-weights">
                      <label class="options-container">
-                        <input type="radio" name="weights" value="500 gr">
+                        <input type="radio" name="weights" value="100 ml">
                         <div class="btn btn-options">
-                           500 gr
+                           100 ml
                         </div>
                      </label>
                   </div>
                   <div class="col-lg-3 mb-lg-0 mb-3 product-info-weights">
                      <label class="options-container">
-                        <input type="radio" name="weights" value="1 kg">
+                        <input type="radio" name="weights" value="150 ml">
                         <div class="btn btn-options">
-                           1 kg
-                        </div>
-                     </label>
-                  </div>
-
-
-                  <!-- Label Gilingan -->
-                  <div class="col-12 mb-2 mt-5">
-                     <h4>Level Gilingan</h4>
-                  </div>
-
-                  <!-- Pilihan Gilingan -->
-                  <div class="col-lg-4 mb-3 product-info-grind">
-                     <label class="options-container">
-                        <input type="radio" name="grind_level" value="Fine" checked>
-                        <div class="btn btn-options">
-                           Fine
-                        </div>
-                     </label>
-                  </div>
-                  <div class="col-lg-4 mb-3 product-info-grind">
-                     <label class="options-container">
-                        <input type="radio" name="grind_level" value="Medium">
-                        <div class="btn btn-options">
-                           Medium
-                        </div>
-                     </label>
-                  </div>
-                  <div class="col-lg-4 mb-3 product-info-grind">
-                     <label class="options-container">
-                        <input type="radio" name="grind_level" value="Coarse">
-                        <div class="btn btn-options">
-                           Coarse
-                        </div>
-                     </label>
-                  </div>
-                  <div class="col-lg-4 product-info-grind">
-                     <label class="options-container">
-                        <input type="radio" name="grind_level" value="Beans">
-                        <div class="btn btn-options">
-                           Beans
+                           150 ml
                         </div>
                      </label>
                   </div>
@@ -223,7 +183,7 @@
 
                   <!-- Isi Deskripsi -->
                   <div class="col-10">
-                     <p>
+                     <p class="text-justify">
                         <?= $coffee['description']; ?>
                      </p>
                   </div>
@@ -310,19 +270,19 @@
       // Mengubah tampilan harga kopi jika berat kopi dipilih
       $('input[type=radio][name=weights]').change(function() {
 
-         if (this.value == '250 gr') {
-            let price250G = price.toLocaleString("id-ID");
-            $('.product-info-price').html("Rp. " + price250G + "<span> / 250 gr</span>");
+         if (this.value == '50 ml') {
+            let price50ml = price.toLocaleString("id-ID");
+            $('.product-info-price').html("Rp. " + price50ml + "<span> / 50 ml</span>");
          }
-         else if (this.value == '500 gr') {
-            let price500G = price * 2;
-            price500G = price500G.toLocaleString("id-ID");
-            $('.product-info-price').html("Rp. " + price500G + "<span> / 500 gr</span>");
+         else if (this.value == '100 ml') {
+            let price100ml = price * 2;
+            price100ml = price100ml.toLocaleString("id-ID");
+            $('.product-info-price').html("Rp. " + price100ml + "<span> / 100 ml</span>");
          }
-         else if (this.value == '1 kg') {
-            let price1KG = price * 4; 
-            price1KG = price1KG.toLocaleString("id-ID");
-            $('.product-info-price').html("Rp. " + price1KG + "<span> / 1 kg</span>");
+         else if (this.value == '150 ml') {
+            let price150ml = price * 3; 
+            price150ml = price150ml.toLocaleString("id-ID");
+            $('.product-info-price').html("Rp. " + price150ml + "<span> / 150 ml</span>");
          }
 
       });

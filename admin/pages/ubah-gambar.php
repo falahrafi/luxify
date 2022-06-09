@@ -4,8 +4,8 @@
 
    $galleryID = $_GET['id'];
 
-    // COFFEES
-   $sqlGambar = "SELECT * FROM galleries INNER JOIN coffees ON coffees.id = galleries.coffee_id WHERE galleries.id = $galleryID";
+    // products
+   $sqlGambar = "SELECT * FROM galleries INNER JOIN products ON products.id = galleries.product_id WHERE galleries.id = $galleryID";
    $resultGambar = mysqli_query($conn, $sqlGambar);
 
    $rowsGambar = [];
@@ -30,15 +30,15 @@
         
         <form action="functions/gallery/ubah.php?id=<?= $galleryID; ?>" method="POST" enctype="multipart/form-data" class="text-center">
             <div class="form-row text-left">
-               <input type="hidden" value="<?= $gambar['coffee_id']; ?>" name="coffee_id">
+               <input type="hidden" value="<?= $gambar['product_id']; ?>" name="product_id">
                <fieldset disabled class=" col-md-6">
                   <div class="form-group">
                      <label for="inputProduct">
                            <i class="fas fa-coffee fa-sm"></i>&ensp;<b>Untuk Produk Apa?</b>
                      </label>
                      <select id="inputProduct" class="form-control" required>
-                        <option value="<?= $gambar['coffee_id']; ?>">
-                           <?= $gambar['category'] . " " . $gambar['name'] . " #P-". sprintf('%04d',$gambar['coffee_id']);?>
+                        <option value="<?= $gambar['product_id']; ?>">
+                           <?= $gambar['category'] . " " . $gambar['name'] . " #P-". sprintf('%04d',$gambar['product_id']);?>
                         </option>
                      </select>
                   </div>

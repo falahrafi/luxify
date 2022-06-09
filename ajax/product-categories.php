@@ -9,9 +9,8 @@
             WHERE galleries.type = 'main'";
 
    if($category == 'all') { $sql .= ";"; }
-   else if($category == 'arabica') { $sql .= "AND products.category = 'arabica';"; }
-   else if($category == 'liberica') { $sql .= "AND products.category = 'liberica';"; }
-   else if($category == 'robusta') { $sql .= "AND products.category = 'robusta';"; }
+   else if($category == 'men') { $sql .= "AND products.category = 'Men';"; }
+   else if($category == 'women') { $sql .= "AND products.category = 'Women';"; }
 
    $result = mysqli_query($conn, $sql);
 

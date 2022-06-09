@@ -15,7 +15,7 @@ require_once 'cart/cart-quantity.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Kopeey – Jelajahi Nusantara Dengan Kopi</title>
+   <title>Luxify – Tampil Maksimal Dengan Yang Maksimal</title>
    <link href="libraries/bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet">
    <link href="styles/main.css" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,9 +42,8 @@ require_once 'cart/cart-quantity.php';
                      Products
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarProducts">
-                     <li><a href="index.php#category-arabica" class="btn-arabica dropdown-item">Kopi Arabica</a></li>
-                     <li><a href="index.php#category-liberica" class="btn-liberica dropdown-item">Kopi Liberica</a></li>
-                     <li><a href="index.php#category-robusta" class="btn-robusta dropdown-item">Kopi Robusta</a></li>
+                     <li><a href="index.php#category-men" class="btn-arabica dropdown-item" >Luxify for Men</a></li>
+                     <li><a href="index.php#category-women" class="btn-liberica dropdown-item" >Luxify for Women</a></li>
                   </ul>
                </li>
                <li class="nav-item dropdown">
@@ -83,10 +82,10 @@ require_once 'cart/cart-quantity.php';
          <div class="row">
             <div class="col-lg-5 mt-4 mt-sm-5">
                <h1 class="hero-title mb-4 mt-2 mt-sm-3">
-                  Jelajahi Nusantara Dengan Kopi
+                Tampil Maksimal Dengan Yang Maksimal
                </h1>
                <p class="hero-paragraph mb-5">
-                  Menyediakan beragam jenis biji kopi dari seluruh Indonesia. Temukan kopeey yang sesuai dengan seleramu sekarang!
+                Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
                <a href="#categories" class="btn btn-beli-sekarang px-4" role="button">
                   Beli Sekarang &nbsp;
@@ -117,27 +116,18 @@ require_once 'cart/cart-quantity.php';
 
             <div class="col-lg-2 col-md-3 col-sm-5 col-8 mb-4">
                <label class="category-container">
-                  <input type="radio" name="coffee-category" value="arabica" id="category-arabica">
+                  <input type="radio" name="coffee-category" value="men" id="category-men">
                   <div class="btn btn-categories px-4 py-2">
-                     Arabica
+                     Men
                   </div>
                </label>
             </div>
 
             <div class="col-lg-2 col-md-3 col-sm-5 col-8 mb-4">
                <label class="category-container">
-                  <input type="radio" name="coffee-category" value="liberica" id="category-liberica">
+                  <input type="radio" name="coffee-category" value="women" id="category-women">
                   <div class="btn btn-categories px-4 py-2">
-                     Liberica
-                  </div>
-               </label>
-            </div>
-
-            <div class="col-lg-2 col-md-3 col-sm-5 col-8 mb-4">
-               <label class="category-container">
-                  <input type="radio" name="coffee-category" value="robusta" id="category-robusta">
-                  <div class="btn btn-categories px-4 py-2">
-                     Robusta
+                     Women
                   </div>
                </label>
             </div>
@@ -162,7 +152,7 @@ require_once 'cart/cart-quantity.php';
             <div class="col-md-4 mb-5">
                <img src="assets/images/kopeey-logo-text-light.png" alt="" height="42">
                <p class="hero-paragraph mt-4">
-                  Menyediakan beragam jenis biji kopi dari seluruh Indonesia. Temukan kopeey yang sesuai dengan seleramu sekarang!
+                Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
             </div>
 
@@ -171,13 +161,10 @@ require_once 'cart/cart-quantity.php';
                   Products
                </div>
                <div class="footer-link mb-3">
-                  <a href="index.php#category-arabica" class="btn-arabica" id="btn-footer-arabica">Kopi Arabica</a>
+                  <a href="index.php#category-men" class="btn-arabica" id="btn-footer-arabica">Luxify for Men</a>
                </div>
                <div class="footer-link mb-3">
-                  <a href="index.php#category-liberica" class="btn-liberica" id="btn-footer-liberica">Kopi Liberica</a>
-               </div>
-               <div class="footer-link">
-                  <a href="index.php#category-robusta" class="btn-robusta" id="btn-footer-robusta">Kopi Robusta</a>
+                  <a href="index.php#category-women" class="btn-liberica" id="btn-footer-liberica">Luxify for Women</a>
                </div>
             </div>
 
@@ -209,7 +196,7 @@ require_once 'cart/cart-quantity.php';
          </div>
 
          <div class="footer-copyright text-center">
-            &copy;2021 <span>Muhammad Falah Abdurrafi</span>
+            &copy;2021 <span>Luxify .</span> All right reserved.
          </div>
       </div>
    </section>

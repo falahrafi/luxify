@@ -3,12 +3,12 @@
    require_once '../../connection.php';
 
     // COFFEES
-   $sqlCoffee = "SELECT * FROM coffees ORDER BY category ASC";
-   $resultCoffee = mysqli_query($conn, $sqlCoffee);
+   $sqlProduct = "SELECT * FROM products ORDER BY category ASC";
+   $resultProduct = mysqli_query($conn, $sqlProduct);
 
-   $rowsCoffee = [];
-   while($rowCoffee = mysqli_fetch_assoc($resultCoffee)){
-      $rowsCoffee[] = $rowCoffee;
+   $rowsProduct = [];
+   while($rowProduct = mysqli_fetch_assoc($resultProduct)){
+      $rowsProduct[] = $rowProduct;
    }
 
 ?>
@@ -31,10 +31,10 @@
                     <label for="inputProduct">
                         <i class="fas fa-coffee fa-sm"></i>&ensp;<b>Untuk Produk Apa?</b>
                     </label>
-                    <select id="inputProduct" class="form-control" name="coffee_id" required>
-                        <?php foreach ($rowsCoffee as $coffee): ?>
-                            <option value="<?= $coffee['id']; ?>">
-                                <?= $coffee['category'] . " " . $coffee['name'] . " #P-". sprintf('%04d',$coffee['id']);?>
+                    <select id="inputProduct" class="form-control" name="product_id" required>
+                        <?php foreach ($rowsProduct as $product): ?>
+                            <option value="<?= $product['id']; ?>">
+                                <?= $product['category'] . " " . $product['name'] . " #P-". sprintf('%04d',$product['id']);?>
                             </option>
                         <?php endforeach; ?>
                     </select>
