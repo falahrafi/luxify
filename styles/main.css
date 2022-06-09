@@ -10,17 +10,17 @@
 }
 
 body {
-   background: #101010 url("../assets/images/bg-blur.png") no-repeat center top;
+   background: #F5F5F5 url("../assets/images/bg-blur.png") no-repeat center top;
    background-size: cover;
-   color: white;
+   color: #1d1d1d;
 }
 
 .nav-link {
-   color: rgb(255, 255, 255) !important;
+   color: #1d1d1d !important;
    transition: all 0.3s ease-in-out;
 }
 .nav-link.active {
-   color: rgb(255, 255, 255) !important;
+   color: #1d1d1d !important;
    font-weight: 700;
 }
 .nav-link:hover {
@@ -48,11 +48,11 @@ body {
 }
 
 .btn-beli-sekarang {
-   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-image: linear-gradient(to right, #2D388A, #00AEEF, #00AEEF, #2D388A);
    background-position: left;
    background-size: 200%;
    border-radius: 32px;
-   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   box-shadow: 0 5px 30px 0px rgba(45, 56, 138, 0.3);
    color: white;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 22px;
@@ -77,7 +77,7 @@ body {
    right: 8%;
    width: 40%;
    height: 640px;
-   background: linear-gradient(167.7deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.02) 90.89%);
+   background: linear-gradient(167.7deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 90.89%);
    -webkit-backdrop-filter: blur(40px);
            backdrop-filter: blur(40px);
    border-radius: 0 0 2000px 2000px;
@@ -323,7 +323,7 @@ body {
 }
 
 .my-label-orange {
-   background: #ED7B00;
+   background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
 }
 
 

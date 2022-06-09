@@ -9,10 +9,10 @@
 .ellipse-b-l { top: 106%; left: 2%; z-index: -1;}
 .ellipse-b-r { top: 54%; right: 3%; z-index: -1;}
 .ellipse-b-t { top: 34%; left: 44%; z-index: -1;}
-.ellipse-s-l-o { top: 138%; left: 5%; z-index: 10; }
-.ellipse-s-l-w { top: 130%; left: 2%; z-index: 10; }
-.ellipse-s-r-w { top: 90%; right: 6%; z-index: 10; }
-.ellipse-s-t-w { top: 28%; left: 56%; z-index: 10; }
+.ellipse-s-l-g { top: 138%; left: 5%; z-index: 10; }
+.ellipse-s-l-b { top: 130%; left: 2%; z-index: 10; }
+.ellipse-s-r-b { top: 90%; right: 6%; z-index: 10; }
+.ellipse-s-t-b { top: 28%; left: 56%; z-index: 10; }
 
 .contact-card {
    background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);

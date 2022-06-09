@@ -1,15 +1,16 @@
-<?php 
+<?php
 
-   require_once 'connection.php';
-   
-   // Akan mencari keseluruhan jumlah quantity pada cart
-   // Menghasilkan variabel '$cartQuantityAll'
-   require_once 'cart/cart-quantity.php'; 
+require_once 'connection.php';
+
+// Akan mencari keseluruhan jumlah quantity pada cart
+// Menghasilkan variabel '$cartQuantityAll'
+require_once 'cart/cart-quantity.php';
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,12 +24,13 @@
    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
+
 <body>
-   
+
    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container py-4">
          <a class="navbar-brand" href="index.php">
-            <img src="assets/images/kopeey-logo-text-light.png" alt="" height="42">
+            <img src="assets/images/luxify-logo-text.png" alt="" height="42">
          </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,9 +42,9 @@
                      Products
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarProducts">
-                     <li><a href="index.php#category-arabica" class="btn-arabica dropdown-item" >Kopi Arabica</a></li>
-                     <li><a href="index.php#category-liberica" class="btn-liberica dropdown-item" >Kopi Liberica</a></li>
-                     <li><a href="index.php#category-robusta" class="btn-robusta dropdown-item" >Kopi Robusta</a></li>
+                     <li><a href="index.php#category-arabica" class="btn-arabica dropdown-item">Kopi Arabica</a></li>
+                     <li><a href="index.php#category-liberica" class="btn-liberica dropdown-item">Kopi Liberica</a></li>
+                     <li><a href="index.php#category-robusta" class="btn-robusta dropdown-item">Kopi Robusta</a></li>
                   </ul>
                </li>
                <li class="nav-item dropdown">
@@ -58,7 +60,9 @@
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
                      <span class="translate-middle badge my-label my-label-orange">
-                        <?php if($cartQuantityAll > 99){ $cartQuantityAll = '99+'; } ?>
+                        <?php if ($cartQuantityAll > 99) {
+                           $cartQuantityAll = '99+';
+                        } ?>
                         <?= $cartQuantityAll; ?>
                         <span class="visually-hidden">unread messages</span>
                      </span>
@@ -209,11 +213,12 @@
          </div>
       </div>
    </section>
-   
+
    <script type="text/javascript" src="libraries/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="libraries/vanilla-tilt.js"></script>
    <script type="text/javascript" src="scripts/tilt-effect.js"></script>
    <script src="libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
    <script src="scripts/ajax-categories.js"></script>
 </body>
+
 </html>

@@ -22,10 +22,10 @@
       <img src="assets/images/ellipse-b-l.png" class="ellipse-element ellipse-b-l">
       <img src="assets/images/ellipse-b-r.png" class="ellipse-element ellipse-b-r">
       <img src="assets/images/ellipse-b-t.png" class="ellipse-element ellipse-b-t">
-      <img src="assets/images/ellipse-s-l-o.png" class="ellipse-element ellipse-s-l-o">
-      <img src="assets/images/ellipse-s-l-w.png" class="ellipse-element ellipse-s-l-w">
-      <img src="assets/images/ellipse-s-r-w.png" class="ellipse-element ellipse-s-r-w">
-      <img src="assets/images/ellipse-s-t-w.png" class="ellipse-element ellipse-s-t-w">
+      <img src="assets/images/ellipse-s-l-g.png" class="ellipse-element ellipse-s-l-g">
+      <img src="assets/images/ellipse-s-l-b.png" class="ellipse-element ellipse-s-l-b">
+      <img src="assets/images/ellipse-s-r-b.png" class="ellipse-element ellipse-s-r-b">
+      <img src="assets/images/ellipse-s-t-b.png" class="ellipse-element ellipse-s-t-b">
    </div>
 
    <nav class="navbar navbar-expand-lg navbar-dark">
