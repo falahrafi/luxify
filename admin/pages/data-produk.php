@@ -2,7 +2,7 @@
 
    require_once '../../connection.php';
 
-   $sql = "SELECT * FROM coffees";
+   $sql = "SELECT * FROM products";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];
@@ -57,32 +57,32 @@
             <tbody>
 
                   <?php 
-                     foreach ($rows as $coffee):
+                     foreach ($rows as $product):
                   ?>
 
                   <tr>
-                     <th><?= "P-" . sprintf('%04d', $coffee['id']); ?></th>
-                     <td><?= $coffee['name']; ?></td>
-                     <td><?= $coffee['category']; ?></td>
-                     <td>Rp. <?= number_format($coffee['price'],0,',','.'); ?></td>
+                     <th><?= "P-" . sprintf('%04d', $product['id']); ?></th>
+                     <td><?= $product['name']; ?></td>
+                     <td><?= $product['category']; ?></td>
+                     <td>Rp. <?= number_format($product['price'],0,',','.'); ?></td>
                      <td>
                         <p class="deskripsi">
-                              <?= $coffee['description']; ?>
+                              <?= $product['description']; ?>
                         </p>
                      </td>
                      <td>
                         <div class="mb-2">
-                           <a class="btn btn-circle btn-primary btn-action" onclick="produkToGambar(<?= $coffee['id']; ?>)" role="button" title="Gambar">
+                           <a class="btn btn-circle btn-primary btn-action" onclick="produkToGambar(<?= $product['id']; ?>)" role="button" title="Gambar">
                               <i class="fas fa-images"></i>
                            </a>                           
                         </div>
                         <div class="mb-2">
-                           <a onclick="keUbahProduk(<?= $coffee['id']; ?>)" id="ubahProduk" class="btn btn-circle btn-success btn-action" role="button" title="Ubah Data">
+                           <a onclick="keUbahProduk(<?= $product['id']; ?>)" id="ubahProduk" class="btn btn-circle btn-success btn-action" role="button" title="Ubah Data">
                               <i class="fas fa-pencil-alt"></i>
                            </a>
                         </div>
                         <div>
-                           <a href="functions/coffee/hapus.php?id=<?= $coffee['id']; ?>" class="btn btn-circle btn-danger btn-action" role="button" title="Hapus Data">
+                           <a href="functions/coffee/hapus.php?id=<?= $product['id']; ?>" class="btn btn-circle btn-danger btn-action" role="button" title="Hapus Data">
                               <i class="fas fa-trash"></i>
                            </a>                           
                         </div>

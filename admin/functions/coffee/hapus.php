@@ -3,9 +3,9 @@
     require_once '../../../connection.php';
 
     // Mengambil data dari input user
-    $coffeeID = htmlspecialchars($_GET["id"]);
+    $productID = htmlspecialchars($_GET["id"]);
 
-    $query = "DELETE FROM coffees WHERE id = $coffeeID";
+    $query = "DELETE FROM products WHERE id = $productID";
 
     mysqli_query($conn, $query);
 

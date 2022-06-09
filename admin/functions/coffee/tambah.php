@@ -8,7 +8,7 @@
     $price = htmlspecialchars($_POST["price"]);
     $description = htmlspecialchars($_POST["description"]);
 
-    $query = "INSERT INTO coffees (name, category, price, description)
+    $query = "INSERT INTO products (name, category, price, description)
                 VALUES ('$name', '$category', $price, '$description')";
 
     mysqli_query($conn, $query);

@@ -2,9 +2,9 @@
 
    require_once '../../connection.php';
 
-   $coffeeID = $_GET['id'];
+   $productID = $_GET['id'];
 
-   $sql = "SELECT * FROM coffees WHERE id = $coffeeID";
+   $sql = "SELECT * FROM products WHERE id = $productID";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];
@@ -30,7 +30,7 @@
     </div>
     <div class="card-body text-black">
         
-        <form action="functions/coffee/ubah.php?id=<?= $coffeeID; ?>" method="POST">
+        <form action="functions/coffee/ubah.php?id=<?= $productID; ?>" method="POST">
             <div class="form-row">
                 <div class="form-group col">
                     <label for="inputName">

@@ -2,7 +2,7 @@
 
     require_once '../../../connection.php';
 
-    $coffeeID = $_GET['id'];
+    $productID = $_GET['id'];
 
     // Mengambil data dari input user
     $name = htmlspecialchars($_POST["name"]);
@@ -10,9 +10,9 @@
     $price = htmlspecialchars($_POST["price"]);
     $description = htmlspecialchars($_POST["description"]);
 
-    $query = "UPDATE coffees SET
+    $query = "UPDATE products SET
                   name = '$name', category = '$category', price = $price, description = '$description'
-               WHERE id = $coffeeID;";
+               WHERE id = $productID;";
 
     mysqli_query($conn, $query);
 

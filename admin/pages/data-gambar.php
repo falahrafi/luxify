@@ -2,11 +2,11 @@
 
    require_once '../../connection.php';
 
-   $sql = "SELECT galleries.id AS 'galleryID', galleries.image, galleries.type, galleries.coffee_id, coffees.name, coffees.category FROM galleries INNER JOIN coffees ON coffees.id = galleries.coffee_id";
+   $sql = "SELECT galleries.id AS 'galleryID', galleries.image, galleries.type, galleries.product_id, products.name, products.category FROM galleries INNER JOIN products ON products.id = galleries.product_id";
    
    if(isset($_GET['q'])){
-      $coffeeID = $_GET['q'];
-      $sql .= " WHERE coffee_id=" . $coffeeID;
+      $productID = $_GET['q'];
+      $sql .= " WHERE product_id=" . $productID;
    }
 
    $result = mysqli_query($conn, $sql);
@@ -65,7 +65,7 @@
                      <th><?= "G-" . sprintf('%04d', $gallery['galleryID']); ?></th>
                      <td><img src="../<?= $gallery['image']; ?>" alt="" height="160"></td>
                      <td><?= $gallery['type']; ?></td>
-                     <td><?= $gallery['category'] . " " . $gallery['name'] . " <b>#P-" . sprintf('%04d', $gallery['coffee_id']) . "</b>"; ?></td>
+                     <td><?= $gallery['category'] . " " . $gallery['name'] . " <b>#P-" . sprintf('%04d', $gallery['product_id']) . "</b>"; ?></td>
                      <td>
                         <div class="mb-2">
                            <a onclick="keUbahGambar(<?= $gallery['galleryID']; ?>)" id="ubahGambar" class="btn btn-circle btn-success btn-action mb-2 mb-xl-0" role="button" title="Ubah Data">

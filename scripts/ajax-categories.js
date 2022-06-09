@@ -4,17 +4,13 @@ var url = window.location.href;
 url = url.split("#");
 $categorySection = url.at(1);
 
-if($categorySection == 'category-arabica') {
-   $("#category-arabica").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=arabica');
+if($categorySection == 'category-men') {
+   $("#category-men").prop("checked", true);
+   $('#product-catalogues').load('ajax/product-categories.php?q=men');
 }
-else if($categorySection == 'category-liberica') {
-   $("#category-liberica").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=liberica');
-}
-else if($categorySection == 'category-robusta') {
-   $("#category-robusta").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=robusta');
+else if($categorySection == 'category-women') {
+   $("#category-women").prop("checked", true);
+   $('#product-catalogues').load('ajax/product-categories.php?q=women');
 } else {
    // AJAX pada saat belum ada tombol kategori yang ditekan
    $('#product-catalogues').load('ajax/product-categories.php?q=all');
@@ -29,9 +25,8 @@ $('input[type=radio][name=coffee-category]').change(function() {
    let category;
 
    if (this.value == 'all') { category = 'all'; }
-   else if (this.value == 'arabica') { category = 'arabica'; }
-   else if (this.value == 'liberica') { category = 'liberica'; }
-   else if (this.value == 'robusta') { category = 'robusta'; }
+   else if (this.value == 'men') { category = 'men'; }
+   else if (this.value == 'women') { category = 'women'; }
 
    // AJAX setelah memilih kategori
    $('#product-catalogues').load('ajax/product-categories.php?q=' + category);
@@ -42,14 +37,10 @@ $('input[type=radio][name=coffee-category]').change(function() {
 // AJAX untuk kategori pada footer
 
 $('.btn-arabica').click(function() {
-   $("#category-arabica").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=arabica');
+   $("#category-men").prop("checked", true);
+   $('#product-catalogues').load('ajax/product-categories.php?q=men');
 });
 $('.btn-liberica').click(function() {
-   $("#category-liberica").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=liberica');
-});
-$('.btn-robusta').click(function() {
-   $("#category-robusta").prop("checked", true);
-   $('#product-catalogues').load('ajax/product-categories.php?q=robusta');
+   $("#category-women").prop("checked", true);
+   $('#product-catalogues').load('ajax/product-categories.php?q=women');
 });

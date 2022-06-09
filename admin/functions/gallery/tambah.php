@@ -3,7 +3,7 @@
    require_once '../../../connection.php';
 
    // Mengambil data dari input user
-   $coffeeID = htmlspecialchars($_POST["coffee_id"]);
+   $productID = htmlspecialchars($_POST["product_id"]);
    $imageType = htmlspecialchars($_POST["type"]);
 
 
@@ -11,7 +11,7 @@
 
       error_reporting(0);
 
-      $sqlTypeMain = "SELECT id FROM galleries WHERE EXISTS(SELECT * FROM galleries WHERE coffee_id = $coffeeID AND type = 'main') AND type = 'main' AND coffee_id = $coffeeID";
+      $sqlTypeMain = "SELECT id FROM galleries WHERE EXISTS(SELECT * FROM galleries WHERE product_id = $productID AND type = 'main') AND type = 'main' AND product_id = $productID";
       $resultTypeMain = mysqli_query($conn, $sqlTypeMain);
 
       $rowsTypeMain = [];
@@ -38,8 +38,8 @@
    move_uploaded_file($tmpName, "../../../" . $imagePathNew);
 
 
-   $query = "INSERT INTO galleries (image, type, coffee_id)
-               VALUES ('$imagePathNew', '$imageType', $coffeeID)";
+   $query = "INSERT INTO galleries (image, type, product_id)
+               VALUES ('$imagePathNew', '$imageType', $productID)";
 
    mysqli_query($conn, $query);
 

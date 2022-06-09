@@ -25,9 +25,8 @@
                         <i class="fas fa-tags fa-sm"></i>&ensp;<b>Kategori</b>
                     </label>
                     <select id="inputCategory" class="form-control" name="category" required>
-                        <option value="Arabica" selected>Arabica</option>
-                        <option value="Liberica">Liberica</option>
-                        <option value="Robusta">Robusta</option>
+                        <option value="Men" selected>For Men</option>
+                        <option value="Women">For Women</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
