@@ -27,43 +27,45 @@
    </nav>
 
    <section class="about">
-      <div class="row justify-content-center mb-sm-5">
-         <div class="about-head col-lg-6 col-10 text-sm-center">
-            <p>
-               About Us
-            </p>
+      <div class="container">
+         <div class="row justify-content-center mb-sm-5">
+            <div class="about-head col-lg-6 col-10 text-sm-center">
+               <p>
+                  About Us
+               </p>
+            </div>
          </div>
-      </div>
 
-      <div class="row justify-content-center mb-sm-4">
-         <div class="about-head col-lg-6 col-10 text-sm-center">
-            <h1>
-               The Right Choice for Your Appearance
-            </h1>
+         <div class="row justify-content-center mb-sm-4">
+            <div class="about-head col-lg-6 col-10 text-sm-center">
+               <h1>
+                  The Right Choice for Your Appearance
+               </h1>
+            </div>
          </div>
-      </div>
 
-      <div class="row justify-content-center">
-         <div class="about-image col-lg-6 text-sm-center mt-5">
-            <img src="assets/images/about-us-image.png" alt="Gambar Biji Kopi" class="img-fluid">
+         <div class="row justify-content-center">
+            <div class="about-image col-lg-6 text-sm-center mt-5">
+               <img src="assets/images/about-us-image.png" alt="Gambar Biji Kopi" class="img-fluid">
+            </div>
          </div>
-      </div>
 
 
-      <div class="row justify-content-center mb-4">
-         <div class="about-line col-2"></div>
-      </div>
+         <div class="row justify-content-center mb-4">
+            <div class="about-line col-2"></div>
+         </div>
 
-      <div class="row justify-content-center">
-         <div class="about-text col-lg-6 col-9 text-sm-center">
-            <p>
-               “Luxify menyediakan berbagai macam produk kosmetik bagi pria maupun wanita, mulai dari skinecare, body lotion, parfurm, pomade, dan lain-lain yang dapat di sesuaikan dengan kebutuhan. Dengan ingredient yang berkualitas tinggi dalam setiap produknya dan dengan harga yang terjangkau, menjadikan produk luxify cocok dipilih untuk menjaga penampilanmu agar tetap menarik dan fresh dalam beraktivitas sepanjang hari.”
-            </p>
+         <div class="row justify-content-center">
+            <div class="about-text col-lg-6 col-9 text-sm-center">
+               <p>
+                  “Luxify menyediakan berbagai macam produk kosmetik bagi pria maupun wanita, mulai dari skinecare, body lotion, parfurm, pomade, dan lain-lain yang dapat di sesuaikan dengan kebutuhan. Dengan ingredient yang berkualitas tinggi dalam setiap produknya dan dengan harga yang terjangkau, menjadikan produk luxify cocok dipilih untuk menjaga penampilanmu agar tetap menarik dan fresh dalam beraktivitas sepanjang hari.”
+               </p>
+            </div>
          </div>
       </div>
    </section>
 
-   <section>
+   <section class="footer">
       <div class="footer-copyright text-center">
          &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
       </div>

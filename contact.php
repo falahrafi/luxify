@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +16,9 @@
    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
+
 <body>
-   
+
    <!-- Ellipse Elements -->
    <div class="container ellipse-container">
       <img src="assets/images/ellipse-b-l.png" class="ellipse-element ellipse-b-l">
@@ -31,7 +33,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container py-4 justify-content-center">
          <a class="navbar-brand" href="index.php">
-            <img src="assets/images/kopeey-logo-text-light.png" alt="" height="42">
+            <img src="assets/images/luxify-logo-text.png" alt="" height="44">
          </a>
       </div>
    </nav>
@@ -46,11 +48,7 @@
                      <h2>Hubungi Kami</h2>
                   </div>
                   <div class="col-12">
-                     <img
-                        src="assets/images/illustration-contact.png"
-                        alt="Ilustrasi Kontak"
-                        class="img-fluid d-lg-none mb-5"
-                     >
+                     <img src="assets/images/illustration-contact.png" alt="Ilustrasi Kontak" class="img-fluid d-lg-none mb-5">
                   </div>
                   <div class="col-12">
                      <label for="inputNama" class="form-label">Nama</label>
@@ -73,11 +71,7 @@
             </div>
 
             <div class="col-lg-7 col-sm-10 col-11 text-center">
-               <img
-                  src="assets/images/illustration-contact.png"
-                  alt="Ilustrasi Kontak"
-                  class="img-fluid contact-illustration d-none d-lg-block"
-               >
+               <img src="assets/images/illustration-contact.png" alt="Ilustrasi Kontak" class="img-fluid contact-illustration d-none d-lg-block">
             </div>
          </div>
       </div>
@@ -87,9 +81,9 @@
       <div class="container">
          <div class="row gx-sm-5">
             <div class="col-md-4 mb-5">
-               <img src="assets/images/kopeey-logo-text-light.png" alt="" height="42">
+               <img src="assets/images/luxify-logo-text-full-white.png" alt="" height="42">
                <p class="hero-paragraph mt-4">
-                  Menyediakan beragam jenis biji kopi dari seluruh Indonesia. Temukan kopeey yang sesuai dengan seleramu sekarang!
+                  Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
             </div>
 
@@ -98,13 +92,10 @@
                   Products
                </div>
                <div class="footer-link mb-3">
-                  <a href="index.php#category-arabica" class="btn-arabica" id="btn-footer-arabica">Kopi Arabica</a>
+                  <a href="index.php#category-men" class="btn-arabica" id="btn-footer-arabica">Luxify for Men</a>
                </div>
                <div class="footer-link mb-3">
-                  <a href="index.php#category-liberica" class="btn-liberica" id="btn-footer-liberica">Kopi Liberica</a>
-               </div>
-               <div class="footer-link">
-                  <a href="index.php#category-robusta" class="btn-robusta" id="btn-footer-robusta">Kopi Robusta</a>
+                  <a href="index.php#category-women" class="btn-liberica" id="btn-footer-liberica">Luxify for Women</a>
                </div>
             </div>
 
@@ -135,12 +126,13 @@
             </div>
          </div>
 
-         <div class="footer-copyright text-center">
-            &copy;2021 <span>Muhammad Falah Abdurrafi</span>
-         </div>
+      </div>
+      <div class="footer-copyright text-center">
+         &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
       </div>
    </section>
 
    <script src="libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
 </body>
+
 </html>

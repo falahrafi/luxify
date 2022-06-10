@@ -1,7 +1,7 @@
 body {
-   background: #101010 url("../assets/images/bg-blur-2.png") no-repeat center top;
+   background: #F5F5F5 url("../assets/images/bg-blur.png") no-repeat center top;
    background-size: cover;
-   color: white;
+   color: #1d1d1d;
 }
 
 .about {
@@ -30,7 +30,7 @@ body {
 .about-line {
    width: 50px;
    height: 4px;
-   background: #FA8D18;
+   background: linear-gradient(90deg, #00AEEF 0%, #00FF8F 100%);
 }
 
 .about-text {
@@ -39,10 +39,16 @@ body {
    font-weight: 400;
 }
 
+.footer {
+   padding-top: 0;
+}
+
 .footer-copyright {
-   background-color: #101010;
-   padding-top: 50px;
-   padding-bottom: 50px;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+   color: white !important;
+   background: rgba(0, 0, 0, 0.2);
 }
 
 
@@ -72,7 +78,7 @@ body {
    }
    
    .about-head h1 {
-      font-size: 44px;
-      line-height: 60px;
+      font-size: 36px;
+      line-height: 50px;
    }
 }

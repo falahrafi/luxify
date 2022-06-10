@@ -15,13 +15,13 @@
 .ellipse-s-t-b { top: 28%; left: 56%; z-index: 10; }
 
 .contact-card {
-   background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   background: linear-gradient(to right top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+   box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.16);
    -webkit-backdrop-filter: blur(30px);
            backdrop-filter: blur(30px);
    border-radius: 46px;
-   border-top: 2px solid rgba(255, 255, 255, 0.4);
-   border-left: 2px solid rgba(255, 255, 255, 0.4);
+   border-top: 2px solid rgba(255, 255, 255, 0.6);
+   border-left: 2px solid rgba(255, 255, 255, 0.6);
    margin-top: 140px;
    padding-bottom: 100px;
    padding-top: 100px;
@@ -43,9 +43,11 @@
 .contact-input {
    min-height: 50px;
    background: rgba(255, 255, 255, 0.25);
-   border: 0;
+   border: 1px solid #00FF8F;
+   border-bottom: 1px solid #00A1FF;
+   border-right: 1px solid #00A1FF;
    border-radius: 25px;
-   color: white;
+   color: #1d1d1d;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 18px;
    font-weight: 400;
@@ -59,25 +61,25 @@
 }
 
 .contact-input:focus {
-   background: rgba(0, 0, 0, 0.15);
+   background: rgba(255, 255, 255, 0.6);
    box-shadow: 0 5px 30px 0px rgba(255, 255, 255, 0.2);
-   caret-color: #ED7B00;
-   color: white;
+   caret-color: #00AEEF;
+   color: #1d1d1d;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 18px;
    font-weight: 400;
 }
 
 .contact-input:hover {
-   background: rgba(0, 0, 0, 0.1);
+   background: rgba(255, 255, 255, 0.8);
 }
 
 .btn-kirim-pesan {
-   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-image: linear-gradient(to right, #2D388A, #00AEEF, #00AEEF, #2D388A);
    background-position: left;
    background-size: 200%;
    border-radius: 32px;
-   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
    color: white;
    font-family: 'Nunito Sans', sans-serif;
    font-size: 22px;
@@ -93,6 +95,11 @@
 
 .contact-illustration {
    margin-top: 130px;
+}
+
+.footer {
+   margin-top: 160px;
+   padding-top: 100px;
 }
 
 
@@ -119,12 +126,13 @@
    .ellipse-b-l { top: 104%; left: 2%; }
    .ellipse-b-r { display: none; }
    .ellipse-b-t { top: 28%; left: 34%; }
-   .ellipse-s-l-o { display: none; }
-   .ellipse-s-l-w { display: none; }
-   .ellipse-s-r-w { top: 88%; right: 6%; z-index: 0; }
-   .ellipse-s-t-w { top: 22%; left: 56%; z-index: 0; }
+   .ellipse-s-l-g { display: none; }
+   .ellipse-s-l-b { display: none; }
+   .ellipse-s-r-b { top: 88%; right: 6%; z-index: 0; }
+   .ellipse-s-t-b { top: 22%; left: 56%; z-index: 0; }
 
    .contact-card {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
       margin-top: 80px;
       padding-bottom: 70px;
       padding-top: 70px;

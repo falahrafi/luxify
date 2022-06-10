@@ -1,6 +1,6 @@
 .cart-card {
-   background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+   background: linear-gradient(to right top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+   box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.1);
    backdrop-filter: blur(30px);
    border-radius: 30px;
    border-top: 2px solid rgba(255, 255, 255, 0.4);
@@ -12,6 +12,12 @@
    font-family: 'Maven Pro', sans-serif;
    font-size: 30px;
    font-weight: 700;
+}
+
+.cart-card h2 i {
+  background: -webkit-linear-gradient(#00AEEF, #2D388A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cart-card h4 {
@@ -136,11 +142,11 @@
 }
 
 .btn-checkout {
-   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-image: linear-gradient(to right, #2D388A, #00AEEF, #00AEEF, #2D388A);
    background-position: left;
    background-size: 200%;
    border-radius: 32px;
-   box-shadow: 0 5px 30px 0px rgba(237, 122, 0, 0.3);
+   box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
    color: white;
    font-family: 'Nunito Sans',
    sans-serif;
@@ -183,6 +189,10 @@
    font-size: 20px;
 }
 
+.footer {
+   margin-top: 160px;
+   padding-top: 100px;
+}
 
 
 

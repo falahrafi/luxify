@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-   require_once '../connection.php';
+require_once '../connection.php';
 
-   $sql = "SELECT carts.quantity, coffees.id AS 'coffeeID', carts.id AS 'cartID', 
+$sql = "SELECT carts.quantity, coffees.id AS 'coffeeID', carts.id AS 'cartID', 
             coffees.category, coffees.name, coffees.price, carts.weights, carts.grind_level, galleries.image
             FROM `carts`
             INNER JOIN coffees ON coffees.id = carts.coffee_id
@@ -10,17 +10,18 @@
             WHERE type='main' AND quantity > 0
             GROUP BY coffees.id, carts.weights, carts.grind_level
             ORDER BY carts.id;";
-   $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
-   $rows = [];
-   while($row = mysqli_fetch_assoc($result)){
-      $rows[] = $row;
-   }
+$rows = [];
+while ($row = mysqli_fetch_assoc($result)) {
+   $rows[] = $row;
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,15 +37,18 @@
    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
+
 <body>
-   
-   <nav class="navbar navbar-expand-lg navbar-dark">
+
+   <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container py-4">
          <a class="navbar-brand" href="../index.php">
-            <img src="../assets/images/kopeey-logo-text-light.png" alt="" height="42">
+            <img src="../assets/images/luxify-logo-text.png" alt="" height="44">
          </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <div class="hamburger-menu-container">
+               <div class="hamburger-menu-animated"></div>
+            </div>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 kopeey-menu">
@@ -53,9 +57,8 @@
                      Products
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarProducts">
-                     <li><a href="../index.php#category-arabica" class="btn-arabica dropdown-item" >Kopi Arabica</a></li>
-                     <li><a href="../index.php#category-liberica" class="btn-liberica dropdown-item" >Kopi Liberica</a></li>
-                     <li><a href="../index.php#category-robusta" class="btn-robusta dropdown-item" >Kopi Robusta</a></li>
+                     <li><a href="../index.php#category-men" class="btn-arabica dropdown-item">Luxify for Men</a></li>
+                     <li><a href="../index.php#category-women" class="btn-liberica dropdown-item">Luxify for Women</a></li>
                   </ul>
                </li>
                <li class="nav-item dropdown">
@@ -68,8 +71,8 @@
                   </ul>
                </li>
                <li class="nav-item">
-                  <div class="btn-outline-admin px-2 mx-lg-2 text-center">
-                     <a class="nav-link" aria-current="page" href="../admin">Admin</a>
+                  <div class="btn-outline-admin px-2 text-center">
+                     <a class="nav-link" aria-current="page" href="admin">Admin</a>
                   </div>
                </li>
             </ul>
@@ -89,68 +92,56 @@
                   </h2>
                </div>
 
-               <?php 
-                  foreach ($rows as $cart):
+               <?php
+               foreach ($rows as $cart) :
                ?>
 
-               <div class="row cart-item-container p-4 mt-4 gx-md-5">
-                  <div class="col-sm-3 cart-image-container p-2 text-center">
-                     <img
-                        src="../<?= $cart['image']; ?>"
-                        alt="Gambar Kopi"
-                        class="cart-image"
-                     >
-                  </div>
-                  <div class="col-sm-9 mt-3 mt-sm-0">
-                     <h4>
-                        <a href="../details.php?id=<?= $cart['coffeeID']; ?>">
-                           <?= $cart['category'] . " " . $cart['name']; ?>
-                        </a>
-                     </h4>
-                     <div>
-                        <span class="cart-label"><?= $cart['weights']; ?></span>
-                        <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
+                  <div class="row cart-item-container p-4 mt-4 gx-md-5">
+                     <div class="col-sm-3 cart-image-container p-2 text-center">
+                        <img src="../<?= $cart['image']; ?>" alt="Gambar Kopi" class="cart-image">
                      </div>
-                     <div class="mt-3 align-items-end">
-                        <span>
-                           <button class="btn-plus-minus px-2 px-sm-3 py-1 py-sm-2" onclick="removeQuantity(<?= $cart['cartID']; ?>)">
-                              <i class="fas fa-minus"></i>
-                           </button>
-                        </span>
-                        <span>
-                           <input
-                              type="text"
-                              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                              onchange="changeQuantity(<?= $cart['cartID']; ?>)"
-                              size="2"
-                              class="quantity text-center"
-                              id="quantity-<?= $cart['cartID']; ?>"
-                              value="<?= $cart['quantity']; ?>"
-                           >
-                        </span>
-                        <span>
-                           <button class="btn-plus-minus px-2 px-sm-3 py-1 py-sm-2" onclick="addQuantity(<?= $cart['cartID']; ?>)">
-                              <i class="fas fa-plus"></i>
-                           </button>
-                        </span>
-                        <span>
-                           <button class="btn-delete px-2 px-sm-3 py-1 py-sm-2" onclick="deleteCart(<?= $cart['cartID']; ?>)">
-                              <i class="fas fa-trash"></i>
-                           </button>
-                        </span>
+                     <div class="col-sm-9 mt-3 mt-sm-0">
+                        <h4>
+                           <a href="../details.php?id=<?= $cart['coffeeID']; ?>">
+                              <?= $cart['name'] . " for " . $cart['category']; ?>
+                           </a>
+                        </h4>
+                        <div>
+                           <span class="cart-label"><?= $cart['weights']; ?></span>
+                           <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
+                        </div>
+                        <div class="mt-3 align-items-end">
+                           <span>
+                              <button class="btn-plus-minus px-2 px-sm-3 py-1 py-sm-2" onclick="removeQuantity(<?= $cart['cartID']; ?>)">
+                                 <i class="fas fa-minus"></i>
+                              </button>
+                           </span>
+                           <span>
+                              <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" onchange="changeQuantity(<?= $cart['cartID']; ?>)" size="2" class="quantity text-center" id="quantity-<?= $cart['cartID']; ?>" value="<?= $cart['quantity']; ?>">
+                           </span>
+                           <span>
+                              <button class="btn-plus-minus px-2 px-sm-3 py-1 py-sm-2" onclick="addQuantity(<?= $cart['cartID']; ?>)">
+                                 <i class="fas fa-plus"></i>
+                              </button>
+                           </span>
+                           <span>
+                              <button class="btn-delete px-2 px-sm-3 py-1 py-sm-2" onclick="deleteCart(<?= $cart['cartID']; ?>)">
+                                 <i class="fas fa-trash"></i>
+                              </button>
+                           </span>
+                        </div>
                      </div>
                   </div>
-               </div>
-               
-               <!-- Form untuk mengirim data pada AJAX -->
-               <form id="cartData-<?= $cart['cartID']; ?>">
-                  <input type="hidden" name="weights" value="<?= $cart['weights']; ?>">
-                  <input type="hidden" name="grind_level" value="<?= $cart['grind_level']; ?>">
-                  <input type="hidden" name="coffee_id" value="<?= $cart['coffeeID']; ?>">
-               </form>
 
-               <?php 
-                  endforeach;
+                  <!-- Form untuk mengirim data pada AJAX -->
+                  <form id="cartData-<?= $cart['cartID']; ?>">
+                     <input type="hidden" name="weights" value="<?= $cart['weights']; ?>">
+                     <input type="hidden" name="grind_level" value="<?= $cart['grind_level']; ?>">
+                     <input type="hidden" name="coffee_id" value="<?= $cart['coffeeID']; ?>">
+                  </form>
+
+               <?php
+               endforeach;
                ?>
                <p class="mt-3">
                   *Anda akan mendapatkan diskon <b>5%</b> jika total beli diatas <b>Rp. 500.000,-</b>
@@ -187,56 +178,52 @@
                </button>
             </div>
             <div class="modal-body">
-               
-               <?php 
-                  $totalBeli = 0;
-                  foreach ($rows as $cart):
+
+               <?php
+               $totalBeli = 0;
+               foreach ($rows as $cart) :
                ?>
-               <div class="row cart-item-container p-4 mb-4 gx-md-5">
-                  <div class="col-sm-3 cart-image-container p-2 text-center">
-                     <img
-                        src="../<?= $cart['image']; ?>"
-                        alt="Gambar Kopi"
-                        class="cart-image"
-                     >
-                  </div>
-                  <div class="col-sm-9 mt-3 mt-sm-0">
-                     <h4>
-                        <?= $cart['category'] . " " . $cart['name']; ?>
-                     </h4>
-                     <div class="mb-2">
-                        <span class="cart-label"><?= $cart['weights']; ?></span>
-                        <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
+                  <div class="row cart-item-container p-4 mb-4 gx-md-5">
+                     <div class="col-sm-3 cart-image-container p-2 text-center">
+                        <img src="../<?= $cart['image']; ?>" alt="Gambar Kopi" class="cart-image">
                      </div>
-                     <h5 class="cart-label cart-label-grey">
-                        <?= 
+                     <div class="col-sm-9 mt-3 mt-sm-0">
+                        <h4>
+                           <?= $cart['category'] . " " . $cart['name']; ?>
+                        </h4>
+                        <div class="mb-2">
+                           <span class="cart-label"><?= $cart['weights']; ?></span>
+                           <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
+                        </div>
+                        <h5 class="cart-label cart-label-grey">
+                           <?=
                            "Rp. " . number_format($cart['price'], 0, ',', '.') .
-                           " x (" . $cart['quantity'] . ")";
-                        ?>
-                     </h5>
-                     <h4 class="cart-label cart-label-white-outline">
-                        <?php 
+                              " x (" . $cart['quantity'] . ")";
+                           ?>
+                        </h5>
+                        <h4 class="cart-label cart-label-white-outline">
+                           <?php
                            $cartPrices = ((float) $cart['price']) * $cart['quantity'];
                            $totalBeli += $cartPrices;
                            echo "Subtotal : Rp. " . number_format($cartPrices, 0, ',', '.');
-                        ?>
-                     </h4>
+                           ?>
+                        </h4>
+                     </div>
                   </div>
-               </div>
-               <?php 
-                  endforeach;
+               <?php
+               endforeach;
                ?>
 
                <div class="text-center">
                   <p class="cart-label cart-label-green d-inline">
-                     <?php 
-                        if($totalBeli > 500000){
-                           $diskon = 0.05;
-                           echo 'Diskon : 5%';
-                        } else {
-                           $diskon = 0;
-                           echo 'Diskon : 0%';
-                        }
+                     <?php
+                     if ($totalBeli > 500000) {
+                        $diskon = 0.05;
+                        echo 'Diskon : 5%';
+                     } else {
+                        $diskon = 0;
+                        echo 'Diskon : 0%';
+                     }
                      ?>
                   </p>
                   <p></p>
@@ -248,11 +235,11 @@
                   <div class="col text-center">
                      <h5>
                         <i class="fas fa-money-bill-wave"></i>
-                        &nbsp;Total Tagihan : 
+                        &nbsp;Total Tagihan :
                      </h5>
                      <h2>
-                        <?php 
-                           $totalTagihan = $totalBeli - ($totalBeli*$diskon);
+                        <?php
+                        $totalTagihan = $totalBeli - ($totalBeli * $diskon);
                         ?>
                         Rp. <?= number_format($totalTagihan, 0, ',', '.'); ?>
                      </h2>
@@ -265,11 +252,11 @@
 
    <section class="footer">
       <div class="container">
-         <div class="row gx-5">
+         <div class="row gx-sm-5">
             <div class="col-md-4 mb-5">
-               <img src="../assets/images/kopeey-logo-text-light.png" alt="" height="42">
+               <img src="../assets/images/luxify-logo-text-full-white.png" alt="" height="42">
                <p class="hero-paragraph mt-4">
-                  Menyediakan beragam jenis biji kopi dari seluruh Indonesia. Temukan kopeey yang sesuai dengan seleramu sekarang!
+                  Menyediakan berbagai jenis produk kosmetik bagi pria dan wanita, untuk menjaga penampilanmu menjadi lebih menarik.
                </p>
             </div>
 
@@ -278,13 +265,10 @@
                   Products
                </div>
                <div class="footer-link mb-3">
-                  <a href="../index.php#category-arabica" class="btn-arabica" id="btn-footer-arabica">Kopi Arabica</a>
+                  <a href="../index.php#category-men" class="btn-arabica" id="btn-footer-arabica">Luxify for Men</a>
                </div>
                <div class="footer-link mb-3">
-                  <a href="../index.php#category-liberica" class="btn-liberica" id="btn-footer-liberica">Kopi Liberica</a>
-               </div>
-               <div class="footer-link">
-                  <a href="../index.php#category-robusta" class="btn-robusta" id="btn-footer-robusta">Kopi Robusta</a>
+                  <a href="../index.php#category-women" class="btn-liberica" id="btn-footer-liberica">Luxify for Women</a>
                </div>
             </div>
 
@@ -315,59 +299,59 @@
             </div>
          </div>
 
-         <div class="footer-copyright text-center">
-            &copy;2021 <span>Muhammad Falah Abdurrafi</span>
-         </div>
+      </div>
+      <div class="footer-copyright text-center">
+         &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
       </div>
    </section>
 
    <script type="text/javascript" src="../libraries/jquery-3.6.0.min.js"></script>
    <script src="../libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
    <script>
-      function addQuantity(cartID){
+      function addQuantity(cartID) {
          $.ajax({
             type: "POST",
             url: "add-quantity.php",
-            data: $('#cartData-'+cartID).serialize(),
-            success: function (response) {
+            data: $('#cartData-' + cartID).serialize(),
+            success: function(response) {
                $("#cartContainer").load(" #cartContainer > *");
                $("#checkoutModal").load(" #checkoutModal > *");
             }
          });
       }
 
-      function removeQuantity(cartID){
+      function removeQuantity(cartID) {
          $.ajax({
             type: "POST",
             url: "remove-quantity.php",
-            data: $('#cartData-'+cartID).serialize(),
-            success: function (response) {
+            data: $('#cartData-' + cartID).serialize(),
+            success: function(response) {
                $("#cartContainer").load(" #cartContainer > *");
                $("#checkoutModal").load(" #checkoutModal > *");
             }
          });
       }
 
-      function changeQuantity(cartID){
-         var quantityValue = $('#quantity-'+cartID).val();
+      function changeQuantity(cartID) {
+         var quantityValue = $('#quantity-' + cartID).val();
 
          $.ajax({
             type: "POST",
-            url: "change-quantity.php?qty="+quantityValue,
-            data: $('#cartData-'+cartID).serialize(),
-            success: function (response) {
+            url: "change-quantity.php?qty=" + quantityValue,
+            data: $('#cartData-' + cartID).serialize(),
+            success: function(response) {
                $("#cartContainer").load(" #cartContainer > *");
                $("#checkoutModal").load(" #checkoutModal > *");
             }
          });
       }
 
-      function deleteCart(cartID){
+      function deleteCart(cartID) {
          $.ajax({
             type: "POST",
-            url: "delete-cart.php?id="+cartID,
-            data: $('#cartData-'+cartID).serialize(),
-            success: function (response) {
+            url: "delete-cart.php?id=" + cartID,
+            data: $('#cartData-' + cartID).serialize(),
+            success: function(response) {
                $("#cartContainer").load(" #cartContainer > *");
                $("#checkoutModal").load(" #checkoutModal > *");
             }
@@ -376,4 +360,5 @@
    </script>
 
 </body>
+
 </html>
