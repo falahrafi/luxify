@@ -1,15 +1,15 @@
-<?php 
+<?php
 
-   require_once '../../connection.php';
+require_once '../../connection.php';
 
-    // COFFEES
-   $sqlProduct = "SELECT * FROM products ORDER BY category ASC";
-   $resultProduct = mysqli_query($conn, $sqlProduct);
+// COFFEES
+$sqlProduct = "SELECT * FROM products ORDER BY category ASC";
+$resultProduct = mysqli_query($conn, $sqlProduct);
 
-   $rowsProduct = [];
-   while($rowProduct = mysqli_fetch_assoc($resultProduct)){
-      $rowsProduct[] = $rowProduct;
-   }
+$rowsProduct = [];
+while ($rowProduct = mysqli_fetch_assoc($resultProduct)) {
+    $rowsProduct[] = $rowProduct;
+}
 
 ?>
 
@@ -24,17 +24,17 @@
         <h6 class="m-0 font-weight-bold text-white">Form Tambah Gambar</h6>
     </div>
     <div class="card-body text-black py-4 px-3 px-sm-5">
-        
+
         <form action="functions/gallery/tambah.php" method="POST" enctype="multipart/form-data" class="text-center">
             <div class="form-row text-left">
                 <div class="form-group col-md-6">
                     <label for="inputProduct">
-                        <i class="fas fa-coffee fa-sm"></i>&ensp;<b>Untuk Produk Apa?</b>
+                        <i class="fas fa-air-freshener"></i></i>&ensp;<b>Untuk Produk Apa?</b>
                     </label>
                     <select id="inputProduct" class="form-control" name="product_id" required>
-                        <?php foreach ($rowsProduct as $product): ?>
+                        <?php foreach ($rowsProduct as $product) : ?>
                             <option value="<?= $product['id']; ?>">
-                                <?= $product['category'] . " " . $product['name'] . " #P-". sprintf('%04d',$product['id']);?>
+                                <?= $product['name'] . " for " . $product['category'] . " #P-" . sprintf('%04d', $product['id']); ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -61,15 +61,7 @@
                             <span class="input-group-text d-none d-md-block" id="inputGambarPrepend">Upload Gambar</span>
                         </div>
                         <div class="custom-file text-left">
-                            <input 
-                                type="file"
-                                name="image"
-                                class="custom-file-input"
-                                id="inputGambar" 
-                                aria-describedby="inputGambarPrepend"
-                                accept=".png"
-                                required
-                            >
+                            <input type="file" name="image" class="custom-file-input" id="inputGambar" aria-describedby="inputGambarPrepend" accept=".png" required>
                             <label class="custom-file-label" for="inputGambar" id="inputGambarLabel">
                                 Pilih gambar (*.png)
                             </label>
@@ -87,9 +79,9 @@
 
 <!-- Mengatur Preview Gambar -->
 <script>
-    $('#inputGambar').change(function(){
+    $('#inputGambar').change(function() {
 
-        if(this.files[0].size > 2097152) {
+        if (this.files[0].size > 2097152) {
 
             alert('File Gambar Terlalu Besar! (Max: 2 MB)');
             this.value = "";
@@ -97,12 +89,12 @@
         } else {
 
             $('#gambarPreview').attr('class', 'd-block');
-            
+
             let imageName = this.value;
             imageName = imageName.split('\\');
             $('#inputGambarLabel').html(imageName.at(-1));
-            $('#gambarPreview').attr("src", URL.createObjectURL(this.files[0]));  
-        
+            $('#gambarPreview').attr("src", URL.createObjectURL(this.files[0]));
+
         }
 
     });

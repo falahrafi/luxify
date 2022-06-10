@@ -29,7 +29,7 @@
    font-size: 16px;
 }
 .page-item.active .page-link {
-   background-color: #ED7B00;
+   background-image: linear-gradient(to right top, #2D388A, #00AEEF);
    border-color: white;
    color: white;
 }

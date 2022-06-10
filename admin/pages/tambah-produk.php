@@ -1,6 +1,6 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-black">Tambah Produk <i class="fas fa-mug-hot fa-sm"></i></h1>
+    <h1 class="h3 mb-0 text-black">Tambah Produk <i class="fas fa-air-freshener"></i></h1>
 </div>
 
 <!-- Basic Card Example -->
@@ -9,14 +9,14 @@
         <h6 class="m-0 font-weight-bold text-white">Form Tambah Produk</h6>
     </div>
     <div class="card-body text-black">
-        
+
         <form action="functions/coffee/tambah.php" method="POST">
             <div class="form-row">
                 <div class="form-group col">
                     <label for="inputName">
-                        <i class="fas fa-coffee fa-sm"></i>&ensp;<b>Nama</b>
+                        <i class="fas fa-air-freshener"></i>&ensp;<b>Nama</b>
                     </label>
-                    <input type="name" name="name" class="form-control" id="inputName" placeholder="* Contoh : 'Aceh Gayo'" required>
+                    <input type="name" name="name" class="form-control" id="inputName" placeholder="* Contoh : 'Facial Wash'" required>
                 </div>
             </div>
             <div class="form-row">

@@ -3,9 +3,17 @@
 }
 
 .bg-orange {
-   background-image: linear-gradient(to right, #ED7B00, #EF9610, #EF9610, #ED7B00);
+   background-image: linear-gradient(to right, #2D388A, #00AEEF, #00AEEF, #2D388A);
    background-position: left;
    background-size: 200%;
+}
+
+.nav-item h2 {
+   color: white;
+}
+
+.nav-link {
+   color: white !important;
 }
 
 .bg-white-orange {
@@ -28,7 +36,7 @@
    font-size: 16.5px;
 }
 .btn-black i {
-   color: #EF9610;
+   color: #00AEEF;
 }
 
 .btn-link {
@@ -53,15 +61,33 @@ h2 {
    color: #101010;
 }
 
-.text-orange {
-   color: #EF9610;
+.text-blue {
+   color: #00AEEF;
 }
 
-.accent-orange {
-   background-color: #EF9610;
+.accent-blue {
+   background-image: linear-gradient(to left, #2D388A, #00AEEF);
    border-radius: 8px 8px 0 0;
    height: 10px;
 }
+
+.btn-blue {
+   background-image: linear-gradient(to left, #2D388A, #00AEEF);
+   border: 0;
+   color: white;
+} .btn-blue:hover {opacity: .6; color: white;}
+
+.btn-green {
+   background-image: linear-gradient(to left, #009655, #00FF8F);
+   border: 0;
+   color: white;
+} .btn-green:hover {opacity: .6; color: white;}
+
+.btn-red {
+   background-image: linear-gradient(to left, #c20000, #e04949);
+   border: 0;
+   color: white;
+} .btn-red:hover {opacity: .6; color: white;}
 
 .table-responsive {
    border-radius: 8px;
@@ -79,7 +105,9 @@ thead {
 }
 
 thead i {
-   color: #EF9610;
+  background: -webkit-linear-gradient(#00AEEF, #3d52ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .deskripsi {

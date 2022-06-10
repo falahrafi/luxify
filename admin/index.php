@@ -9,20 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Halaman Admin - Kopeey</title>
+    <title>Halaman Admin - Luxify</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="../styles/main.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/data-tables-custom.css" rel="stylesheet">
-    
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -40,10 +38,10 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
                 <div class="sidebar-brand-icon">
-                    <img src="../assets/images/kopeey-logo.png" alt="" height="36">
+                    <img src="../assets/images/luxify-logo.png" alt="" height="36">
                 </div>
                 <div class="sidebar-brand-text mx-3">
-                    <img src="../assets/images/kopeey-text-light.png" alt="" height="30">
+                    <img src="../assets/images/luxify-text-light.png" alt="" height="30">
                 </div>
             </a>
 
@@ -52,9 +50,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item" id="menuProduk">
-                <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapseProduk"
-                    aria-expanded="true" aria-controls="collapseProduk">
-                    <i class="fas fa-fw fa-mug-hot"></i>
+                <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapseProduk" aria-expanded="true" aria-controls="collapseProduk">
+                    <i class="fas fa-air-freshener"></i>
                     <span>Produk</span>
                 </a>
                 <div id="collapseProduk" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -74,8 +71,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item" id="menuGambar">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGambar"
-                    aria-expanded="true" aria-controls="collapseGambar">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGambar" aria-expanded="true" aria-controls="collapseGambar">
                     <i class="fas fa-fw fa-images"></i>
                     <span>Gambar Produk</span>
                 </a>
@@ -96,8 +92,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item" id="menuPesan">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePesan"
-                    aria-expanded="true" aria-controls="collapsePesan">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePesan" aria-expanded="true" aria-controls="collapsePesan">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Pesan Pengguna</span>
                 </a>
@@ -151,7 +146,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid isi-konten-admin">
 
-                    
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -163,7 +158,7 @@
             <footer class="sticky-footer bg-light">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; 2021 Muhammad Falah Abdurrafi</span>
+                        &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
                     </div>
                 </div>
             </footer>
