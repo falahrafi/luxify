@@ -1,3 +1,7 @@
+body {
+   background: #F5F5F5 url("../assets/images/bg-blur-2.png") no-repeat center top;
+}
+
 .product-detail-card {
    background: linear-gradient(116.86deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
    box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.1);
@@ -111,7 +115,9 @@
 /* (Checked) When the radio is checked, do... */
 .options-container input:checked~.btn-options {
    width: 90%;
-   background: linear-gradient(90deg, #00A1FF 0%, #00FF8F 100%);
+   background: linear-gradient(to right, #00A1FF, #00FF8F, #00FF8F, #00A1FF);
+   background-position: left;
+   background-size: 200%;
    border: 0;
    border-radius: 24px;
    color: white;
@@ -119,7 +125,7 @@
    font-size: 16px;
    font-weight: 700;
    transition: all 0.3s ease-in-out;
-}
+} .options-container input:checked~.btn-options:hover { background-position: right; }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .btn-options:after {

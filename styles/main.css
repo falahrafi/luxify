@@ -10,7 +10,7 @@
 }
 
 body {
-   background: #F5F5F5 url("../assets/images/bg-blur.png") no-repeat center top;
+   background: #F5F5F5 url("../assets/images/bg-blur.png") repeat center top;
    background-size: cover;
    color: #1d1d1d;
 }
@@ -130,6 +130,16 @@ body {
    max-width: 100%;
    height: auto;
    margin-top: -30px;
+   animation: hero-image-margin-top 1.5s infinite alternate;
+}
+
+@keyframes hero-image-margin-top {
+   0% {
+      margin-top: -30px;
+   }
+   100% {
+      margin-top: -10px;
+   }
 }
 
 .hero-glass {
@@ -143,7 +153,17 @@ body {
            backdrop-filter: blur(40px);
    border-radius: 0 0 2000px 2000px;
    box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.05);
+   animation: hero-glass-height 1.5s infinite alternate;
    z-index: -1;
+}
+
+@keyframes hero-glass-height {
+   0% {
+      height: 640px;
+   }
+   100% {
+      height: 660px;
+   }
 }
 
 .categories {
@@ -198,7 +218,9 @@ body {
 /* (Checked) When the radio is checked, do... */
 .category-container input:checked ~ .btn-categories {
    width: 90%;
-   background: linear-gradient(90deg, #00A1FF 0%, #00FF8F 100%);
+   background: linear-gradient(to right, #00A1FF, #00FF8F, #00FF8F, #00A1FF);
+   background-position: left;
+   background-size: 200%;
    border-width: 0px;
    border-radius: 24px;
    color: white;
@@ -206,7 +228,8 @@ body {
    sans-serif;
    font-size: 18px;
    font-weight: 700;
-}
+   transition: all 0.3s ease-in-out;
+} .category-container input:checked ~ .btn-categories:hover { background-position: right; }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .btn-categories:after {
@@ -317,6 +340,15 @@ body {
    background: linear-gradient(85.02deg, #2D388A 0%, #2B8DC6 55.21%, #00FF8F 100%);
    margin-top: 160px;
    padding-top: 100px;
+   animation: bg-footer-animation 2s infinite alternate;
+}
+@keyframes bg-footer-animation {
+   0% {
+      background-size: 150%;
+   }
+   100% {
+      background-size: 100%;
+   }
 }
 
 .footer .hero-paragraph {
@@ -452,10 +484,12 @@ body {
    }
    .hero-glass {
       display: none;
+      animation: none;
    }
    .hero-image {
       margin-top: 60px;
       max-width: 90%;
+      animation: none;
    }
    .categories {
       margin-top: 80px;
