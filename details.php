@@ -193,9 +193,17 @@ $coffee = $rows[0];
 
                   <!-- Tombol Masukkan Keranjang -->
                   <div class="col-12 mt-4">
-                     <button type="submit" class="btn btn-masukkan-keranjang px-4" role="button">
+
+                     <!-- Small - Extra Large -->
+                     <button type="submit" class="btn btn-masukkan-keranjang px-4 d-none d-sm-block" role="button">
                         <i class="fas fa-cart-plus"></i>
                         &nbsp;Masukkan Keranjang
+                     </button>
+
+                     <!-- Extra Small -->
+                     <button type="submit" class="btn btn-masukkan-keranjang px-4 d-block d-sm-none" role="button">
+                        <i class="fas fa-cart-plus"></i>
+                        &nbsp;Keranjang
                      </button>
                   </div>
 
