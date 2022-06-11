@@ -30,7 +30,7 @@ $coffee = $rows[0];
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>
-      <?= $coffee["category"] . " " . $coffee["name"] . " – Kopeey"; ?>
+      <?= $coffee["category"] . " " . $coffee["name"] . " – Luxify"; ?>
    </title>
    <link href="libraries/bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet">
    <link href="styles/main.css" rel="stylesheet">
