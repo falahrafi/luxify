@@ -117,7 +117,7 @@ body {
    width: 90%;
    background: linear-gradient(to right, #00A1FF, #00FF8F, #00FF8F, #00A1FF);
    background-position: left;
-   background-size: 200%;
+   background-size: 300%;
    border: 0;
    border-radius: 24px;
    color: white;
@@ -166,7 +166,7 @@ body {
 
 .product-detail-image-container i {
    font-size: 32px;
-   color: rgba(255, 255, 255, 0.5);
+   color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .btn-masukkan-keranjang {
