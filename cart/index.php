@@ -2,13 +2,13 @@
 
 require_once '../connection.php';
 
-$sql = "SELECT carts.quantity, coffees.id AS 'coffeeID', carts.id AS 'cartID', 
-            coffees.category, coffees.name, coffees.price, carts.weights, carts.grind_level, galleries.image
+$sql = "SELECT carts.quantity, products.id AS 'productID', carts.id AS 'cartID', 
+            products.category, products.name, products.price, carts.weights, galleries.image
             FROM `carts`
-            INNER JOIN coffees ON coffees.id = carts.coffee_id
-            INNER JOIN galleries ON coffees.id = galleries.coffee_id
+            INNER JOIN products ON products.id = carts.product_id
+            INNER JOIN galleries ON products.id = galleries.product_id
             WHERE type='main' AND quantity > 0
-            GROUP BY coffees.id, carts.weights, carts.grind_level
+            GROUP BY products.id, carts.weights
             ORDER BY carts.id;";
 $result = mysqli_query($conn, $sql);
 
@@ -102,13 +102,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                      </div>
                      <div class="col-sm-9 mt-3 mt-sm-0">
                         <h4>
-                           <a href="../details.php?id=<?= $cart['coffeeID']; ?>">
+                           <a href="../details.php?id=<?= $cart['productID']; ?>">
                               <?= $cart['name'] . " for " . $cart['category']; ?>
                            </a>
                         </h4>
                         <div>
                            <span class="cart-label"><?= $cart['weights']; ?></span>
-                           <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
                         </div>
                         <div class="mt-3 align-items-end">
                            <span>
@@ -136,8 +135,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                   <!-- Form untuk mengirim data pada AJAX -->
                   <form id="cartData-<?= $cart['cartID']; ?>">
                      <input type="hidden" name="weights" value="<?= $cart['weights']; ?>">
-                     <input type="hidden" name="grind_level" value="<?= $cart['grind_level']; ?>">
-                     <input type="hidden" name="coffee_id" value="<?= $cart['coffeeID']; ?>">
+                     <input type="hidden" name="product_id" value="<?= $cart['productID']; ?>">
                   </form>
 
                <?php
@@ -193,7 +191,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </h4>
                         <div class="mb-2">
                            <span class="cart-label"><?= $cart['weights']; ?></span>
-                           <span class="cart-label cart-label-orange"><?= $cart['grind_level']; ?></span>
                         </div>
                         <h5 class="cart-label cart-label-grey">
                            <?=

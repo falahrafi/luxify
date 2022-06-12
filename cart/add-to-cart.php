@@ -4,11 +4,10 @@
 
     // Mengambil data berdasarkan halaman 'details.php'
     $weights = htmlspecialchars($_POST["weights"]);
-    $grindLevel = htmlspecialchars($_POST["grind_level"]);
-    $coffeeID = htmlspecialchars($_GET["id"]);
+    $productID = htmlspecialchars($_GET["id"]);
 
     // Mengambil data yang sama dengan data dari halaman 'details.php'
-    $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND grind_level = '$grindLevel' AND coffee_id = $coffeeID;";
+    $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID;";
     $resultCart = mysqli_query($conn, $cart);
     $rowCart = mysqli_fetch_assoc($resultCart);
     $cartID = $rowCart['id'];
@@ -17,7 +16,7 @@
     $quantityNew = (int) $rowCart['quantity'] + 1;
 
     // Mencari tahu apakah data yang sama sudah ada atau belum
-    $cartExists = "SELECT EXISTS (SELECT * FROM `carts` WHERE weights = '$weights' AND grind_level = '$grindLevel' AND coffee_id = $coffeeID) AS 'exists';";
+    $cartExists = "SELECT EXISTS (SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID) AS 'exists';";
     $resultCartExists = mysqli_query($conn, $cartExists);
     $rowCartExists = mysqli_fetch_assoc($resultCartExists);
 
@@ -26,8 +25,8 @@
     if($rowCartExists['exists'] == '1') {
         $query = "UPDATE carts SET quantity = $quantityNew WHERE id = $cartID";
     } else {
-        $query = "INSERT INTO carts (weights, grind_level, quantity, coffee_id)
-                    VALUES ('$weights', '$grindLevel', 1, '$coffeeID')";
+        $query = "INSERT INTO carts (weights, quantity, product_id)
+                    VALUES ('$weights' , 1, '$productID')";
     }
 
    mysqli_query($conn, $query);

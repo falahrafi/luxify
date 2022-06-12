@@ -4,13 +4,12 @@
 
       // Mengambil data berdasarkan halaman 'details.php'
       $weights = htmlspecialchars($_POST["weights"]);
-      $grindLevel = htmlspecialchars($_POST["grind_level"]);
-      $coffeeID = htmlspecialchars($_POST["coffee_id"]);
+      $productID = htmlspecialchars($_POST["product_id"]);
 
       $qtyNew = (int) $_GET['qty'];
 
       // Mengambil data quantity saat ini (sebelum diubah)
-      $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND grind_level = '$grindLevel' AND coffee_id = $coffeeID;";
+      $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID;";
       $resultCart = mysqli_query($conn, $cart);
       $rowCart = mysqli_fetch_assoc($resultCart);
       $cartID = $rowCart['id'];
