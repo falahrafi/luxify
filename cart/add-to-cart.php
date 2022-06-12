@@ -10,10 +10,10 @@
     $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID;";
     $resultCart = mysqli_query($conn, $cart);
     $rowCart = mysqli_fetch_assoc($resultCart);
-    $cartID = $rowCart['id'];
+    $cartID = isset($rowCart['id']);
 
     // Untuk data yang sudah ada, quantity ditambah 1
-    $quantityNew = (int) $rowCart['quantity'] + 1;
+    $quantityNew = (int) isset($rowCart['quantity']) + 1;
 
     // Mencari tahu apakah data yang sama sudah ada atau belum
     $cartExists = "SELECT EXISTS (SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID) AS 'exists';";
