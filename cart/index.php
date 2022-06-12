@@ -17,6 +17,18 @@ while ($row = mysqli_fetch_assoc($result)) {
    $rows[] = $row;
 }
 
+function price($weights, $harga) {
+  if ($weights == "50 ml") {
+    $price = $harga * 1;
+  } else if ($weights == "100 ml") {
+    $price = $harga * 2;
+  } else if ($weights == "150 ml") {
+   $price = $harga * 3;
+  }
+
+  return $price;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -195,13 +207,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                         <h5 class="cart-label cart-label-black">
                            <?=
-                           "Rp. " . number_format($cart['price'], 0, ',', '.') .
+                           "Rp. " . number_format(price($cart['weights'], $cart['price']), 0, ',', '.') .
                               " x (" . $cart['quantity'] . ")";
                            ?>
                         </h5>
                         <h4 class="cart-label cart-label-blue-outline">
                            <?php
-                           $cartPrices = ((float) $cart['price']) * $cart['quantity'];
+                           $cartPrices = ((float) price($cart['weights'], $cart['price'])) * $cart['quantity'];
                            $totalBeli += $cartPrices;
                            echo "Subtotal : Rp. " . number_format($cartPrices, 0, ',', '.');
                            ?>
