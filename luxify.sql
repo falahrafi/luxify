@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 11, 2022 at 02:21 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- Host: 127.0.0.1
+-- Generation Time: Jun 12, 2022 at 07:26 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,6 +33,15 @@ CREATE TABLE `carts` (
   `quantity` int(11) NOT NULL,
   `product_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `weights`, `quantity`, `product_id`) VALUES
+(1, '50 ml', 1, 17),
+(2, '50 ml', 1, 18),
+(3, '50 ml', 1, 21);
 
 -- --------------------------------------------------------
 
@@ -99,18 +107,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `price`, `description`) VALUES
-(17, 'Facial Wash', 'Men', 58000, 'FACIAL WASH Pembersih wajah 3 in 1 yang diperkaya dengan Avena strigosa Seed Extract, Niacinamide, Beads dan Clay yang membantu mencerahkan, melembutkan, melembabkan, membersihkan minyak dan kotoran secara optimal.'),
-(18, 'Energy Bright', 'Men', 61000, 'ENERGY BRIGHT CREAM Luxify for Men Energy Bright Cream yang diformulasikan dengan 3 macam UV filter yang dapat membantu melindungi kulit secara maksimal serta dengan kandungan Avena strigosa Seed Extract, Niacinamide, dan Aloevera Extract yang membantu melembabkan, mencerahkan, dan melembutkan kulit. MS Glow for Men Energy Bright Cream membantu melembabkan, mencerahkan, dan melembutkan kulit, Luxify For Men Energy Bright Cream juga memberikan tone up 1 tingkat pada wajah.'),
-(20, 'Acne Spot', 'Women', 65500, 'LUXIFY ACNE SPOT TREATMENT FOR GIRL Spot Treatment yang ditargetkan untuk jerawat aktif. Diperkaya dengan kandungan Salicylic Acid (BHA), Niacinamide, dan Centella Asiatica dapat memberikan efek dingin pada kulit yang berjerawat, sekaligus bermanfaat untuk: 1. Meredakan kemerahan jerawat 2. Menyembuhkan jerawat yang meradang 3. Membunuh bakteri penyebab jerawat 4. Membersihkan pori yang tersumbat 5. Menyeimbangkan Ph alami kulit, tanpa membuat kulit kering 6. Memperbaiki skin barrier sekaligus meningkatkan imunitas kulit 7. Mencegah hyperpigmentasi yang disebabkan oleh jerawat yang meninggalkan bekas.'),
-(21, 'Sun Screen', 'Men', 150000, 'SUNSCREEN SPRAY  FOR MEN Dengan formula yang ringan dan tidak berminyak membantu melindungi kulit wajah dari Sinar UV A dan UV B serta radikal bebas lainnya. Diperkaya dengan Avena Strigosa (Black Oat) Seed Extract yang membantu melembabkan kulit hingga lapisan dalam. Aplikasikan Luxify For Men Sunscreen Spray pada wajah dan juga pada tangan ataupun kaki agar mendapat perlindugan menyeluruh dari Sinar UV A dan UV B dan radikal bebas lainnya.'),
-(22, 'Energy Serum', 'Men', 180000, 'ENERGY SERUM Mengandung 6 macam asam kompleks yaitu Glycolic Acid, Malic Acid, Tartaric Acid, Salicylic Acid, Lactic Acid dan Citric Acid yang membantu merawat kulit berjerawat, menyamarkan kerutan, mencerahkan kulit dan mengangkat sel-sel kulit mati, dengan kandungan Avena strigosa (Balck Oat) Seed Extract membantu melembabkan kulit hingga lapisan dalam. Aplikasikan Luxify for Men Serum pada wajah yang telah dibersihkan pada malam hari agar mendapatkan kulit wajah yang sehat, lembab, bersih, cerah dan bebas dari jerawat. Gunakan rangkaian produk Luxify for Men untuk hasil yang maksimal.'),
-(23, 'Day Cream', 'Women', 345000, 'Whitening Day Cream sendiri dapat digunakan untuk semua jenis kulit dan berfungsi menyamarkan noda dan mencerahkan wajah. Selain itu Whitening Day Cream juga: - Glowing look finish - Tekstur ringan dan meresap ke kulit - SPF 30.'),
-(24, 'Glowing Toner', 'Women', 90000, 'Luxify Toner acne For Girl ini salah satunya bertugas dan berfungsi mempercepat proses penyembuhan jerawat/brutusan. Makanya sangat disarankan digunakan untuk kulit yg sedang bermasalah dg jerawat/brutusan. Toner acne wajib ada dalam paket acne dan paket acne akan lebih cepat mengeringkan jerawat/brutusan jika ditambahkan dengan SERUM ACNE.'),
-(25, 'Perfume', 'Men', 57500, 'Luxify Perfume For Men merupakan parfum yang menghadirkan aroma Oud dan Amber yang lekat dengan warisan tradisi budaya. Hint Gourmand dan Vanilla membawa kembali manisnya memori terdahulu. Sentuhan awal Rose membuat kita semakin cinta pada tempat kita bermula.'),
-(26, 'Green Tea Clay Mask', 'Women', 92500, 'Luxify Green tea clay mask For Girl adalah Clay mask yang memiliki bahan utama green tea yang sudah sangat terkenal mampu mencerahkan kulit, sebagai antioksidan, dan mencegah serta mengeringkan jerawat.'),
-(27, 'Water Based - Pomade', 'Men', 80000, 'Water based dari Luxify For Men ini punya tekstur daya tahan yang ringan dan diperkaya dengan kandungan Aloevera Extract, Ginseng Extract dan Panthenol untuk membantu melembabkan kulit kepala dan mempertahankan rambut tetap kuat dan sehat.'),
-(28, 'Oil Based - Pomade', 'Men', 75000, 'Oil based dari Luxify For Men ini punya tekstur daya tahan yang tinggi dan efektif untuk merapikan rambut serta memberi kilau alami.'),
-(29, 'Clay Based - Pomade', 'Men', 85000, 'Clay based dari Luxify For Men ini punya tekstur daya tahan yang tinggi dan matte untuk merapikan rambut serta memberi kilau alami.');
+(17, 'Facial Wash', 'Men', 30000, 'FACIAL WASH Pembersih wajah 3 in 1 yang diperkaya dengan Avena strigosa Seed Extract, Niacinamide, Beads dan Clay yang membantu mencerahkan, melembutkan, melembabkan, membersihkan minyak dan kotoran secara optimal.'),
+(18, 'Energy Bright', 'Men', 60000, 'ENERGY BRIGHT CREAM Luxify for Men Energy Bright Cream yang diformulasikan dengan 3 macam UV filter yang dapat membantu melindungi kulit secara maksimal serta dengan kandungan Avena strigosa Seed Extract, Niacinamide, dan Aloevera Extract yang membantu melembabkan, mencerahkan, dan melembutkan kulit. MS Glow for Men Energy Bright Cream membantu melembabkan, mencerahkan, dan melembutkan kulit, Luxify For Men Energy Bright Cream juga memberikan tone up 1 tingkat pada wajah.'),
+(20, 'Acne Spot', 'Women', 150000, 'LUXIFY ACNE SPOT TREATMENT FOR GIRL Spot Treatment yang ditargetkan untuk jerawat aktif. Diperkaya dengan kandungan Salicylic Acid (BHA), Niacinamide, dan Centella Asiatica dapat memberikan efek dingin pada kulit yang berjerawat, sekaligus bermanfaat untuk: 1. Meredakan kemerahan jerawat 2. Menyembuhkan jerawat yang meradang 3. Membunuh bakteri penyebab jerawat 4. Membersihkan pori yang tersumbat 5. Menyeimbangkan Ph alami kulit, tanpa membuat kulit kering 6. Memperbaiki skin barrier sekaligus meningkatkan imunitas kulit 7. Mencegah hyperpigmentasi yang disebabkan oleh jerawat yang meninggalkan bekas.'),
+(21, 'Sun Screen', 'Men', 100000, 'SUNSCREEN SPRAY  FOR MEN Dengan formula yang ringan dan tidak berminyak membantu melindungi kulit wajah dari Sinar UV A dan UV B serta radikal bebas lainnya. Diperkaya dengan Avena Strigosa (Black Oat) Seed Extract yang membantu melembabkan kulit hingga lapisan dalam. Aplikasikan Luxify For Men Sunscreen Spray pada wajah dan juga pada tangan ataupun kaki agar mendapat perlindugan menyeluruh dari Sinar UV A dan UV B dan radikal bebas lainnya.'),
+(22, 'Energy Serum', 'Men', 90000, 'ENERGY SERUM Mengandung 6 macam asam kompleks yaitu Glycolic Acid, Malic Acid, Tartaric Acid, Salicylic Acid, Lactic Acid dan Citric Acid yang membantu merawat kulit berjerawat, menyamarkan kerutan, mencerahkan kulit dan mengangkat sel-sel kulit mati, dengan kandungan Avena strigosa (Balck Oat) Seed Extract membantu melembabkan kulit hingga lapisan dalam. Aplikasikan Luxify for Men Serum pada wajah yang telah dibersihkan pada malam hari agar mendapatkan kulit wajah yang sehat, lembab, bersih, cerah dan bebas dari jerawat. Gunakan rangkaian produk Luxify for Men untuk hasil yang maksimal.'),
+(23, 'Day Cream', 'Women', 100000, 'Whitening Day Cream sendiri dapat digunakan untuk semua jenis kulit dan berfungsi menyamarkan noda dan mencerahkan wajah. Selain itu Whitening Day Cream juga: - Glowing look finish - Tekstur ringan dan meresap ke kulit - SPF 30.'),
+(24, 'Glowing Toner', 'Women', 70000, 'Luxify Toner acne For Girl ini salah satunya bertugas dan berfungsi mempercepat proses penyembuhan jerawat/brutusan. Makanya sangat disarankan digunakan untuk kulit yg sedang bermasalah dg jerawat/brutusan. Toner acne wajib ada dalam paket acne dan paket acne akan lebih cepat mengeringkan jerawat/brutusan jika ditambahkan dengan SERUM ACNE.'),
+(25, 'Perfume', 'Men', 100000, 'Luxify Perfume For Men merupakan parfum yang menghadirkan aroma Oud dan Amber yang lekat dengan warisan tradisi budaya. Hint Gourmand dan Vanilla membawa kembali manisnya memori terdahulu. Sentuhan awal Rose membuat kita semakin cinta pada tempat kita bermula.'),
+(26, 'Green Tea Clay Mask', 'Women', 60000, 'Luxify Green tea clay mask For Girl adalah Clay mask yang memiliki bahan utama green tea yang sudah sangat terkenal mampu mencerahkan kulit, sebagai antioksidan, dan mencegah serta mengeringkan jerawat.'),
+(27, 'Water Based - Pomade', 'Men', 50000, 'Water based dari Luxify For Men ini punya tekstur daya tahan yang ringan dan diperkaya dengan kandungan Aloevera Extract, Ginseng Extract dan Panthenol untuk membantu melembabkan kulit kepala dan mempertahankan rambut tetap kuat dan sehat.'),
+(28, 'Oil Based - Pomade', 'Men', 50000, 'Oil based dari Luxify For Men ini punya tekstur daya tahan yang tinggi dan efektif untuk merapikan rambut serta memberi kilau alami.'),
+(29, 'Clay Based - Pomade', 'Men', 50000, 'Clay based dari Luxify For Men ini punya tekstur daya tahan yang tinggi dan matte untuk merapikan rambut serta memberi kilau alami.');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +156,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `contact_us`

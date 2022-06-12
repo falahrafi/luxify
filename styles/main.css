@@ -425,8 +425,9 @@ body {
    padding-right: 6px;
 }
 
-.my-label-orange {
+.my-label-blue {
    background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
+   font-weight: 600;
 }
 
 .dropdown-menu {

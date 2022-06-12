@@ -193,13 +193,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="mb-2">
                            <span class="cart-label"><?= $cart['weights']; ?></span>
                         </div>
-                        <h5 class="cart-label cart-label-grey">
+                        <h5 class="cart-label cart-label-black">
                            <?=
                            "Rp. " . number_format($cart['price'], 0, ',', '.') .
                               " x (" . $cart['quantity'] . ")";
                            ?>
                         </h5>
-                        <h4 class="cart-label cart-label-white-outline">
+                        <h4 class="cart-label cart-label-blue-outline">
                            <?php
                            $cartPrices = ((float) $cart['price']) * $cart['quantity'];
                            $totalBeli += $cartPrices;
@@ -225,11 +225,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                      ?>
                   </p>
                   <p></p>
-                  <p class="cart-label cart-label-white-outline d-inline">
+                  <p class="cart-label cart-label-black d-inline">
                      Total Beli : Rp. <?= number_format($totalBeli, 0, ',', '.'); ?>
                   </p>
                </div>
-               <div class="row cart-item-container cart-item-container-black py-3 mt-4 mx-sm-3 gx-md-5">
+               <div class="row cart-item-container cart-item-container-blue py-3 mt-4 mx-sm-3 gx-md-5">
                   <div class="col text-center">
                      <h5>
                         <i class="fas fa-money-bill-wave"></i>

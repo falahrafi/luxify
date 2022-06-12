@@ -61,7 +61,7 @@ require_once 'cart/cart-quantity.php';
                <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
-                     <span class="translate-middle badge my-label my-label-orange">
+                     <span class="translate-middle badge my-label my-label-blue px-2">
                         <?php if ($cartQuantityAll > 99) {
                            $cartQuantityAll = '99+';
                         } ?>
