@@ -129,7 +129,7 @@ $coffee = $rows[0];
             </div>
 
             <div class="col-lg-6 product-info">
-               <form action="cart/add-to-cart.php?id=<?= $coffeeID; ?>" method="post" class="row gx-0">
+               <form action="cart/add-to-cart.php?id=<?= $productID; ?>" method="post" class="row gx-0">
                   <div class="col-12 mb-2">
                      <div class="btn product-info-category mb-1">
                         <?= $coffee['category']; ?>
