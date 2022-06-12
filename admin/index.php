@@ -20,10 +20,13 @@
     <link href="../styles/main.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/data-tables-custom.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
 </head>
 
