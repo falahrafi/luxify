@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                </li>
                <li class="nav-item">
                   <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link" aria-current="page" href="admin">Admin</a>
+                     <a class="nav-link" aria-current="page" href="../admin">Admin</a>
                   </div>
                </li>
             </ul>
