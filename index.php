@@ -6,6 +6,17 @@ require_once 'connection.php';
 // Menghasilkan variabel '$cartQuantityAll'
 require_once 'cart/cart-quantity.php';
 
+session_start();
+
+if (!isset($_SESSION['level'])) {
+  header('location: ./login.php');
+  exit();
+}
+
+$userid = $_SESSION['id'];
+$username = $_SESSION['name'];
+$userlevel = $_SESSION['level'];
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +67,15 @@ require_once 'cart/cart-quantity.php';
                   <ul class="dropdown-menu" aria-labelledby="navbarAbout">
                      <li><a class="dropdown-item" href="about.php">About Us</a></li>
                      <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     <?= $username ?>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarAbout">
+                     <li><a class="dropdown-item" href="#">Level: <?= $userlevel ?></a></li>
+                     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                   </ul>
                </li>
                <li class="nav-item">
