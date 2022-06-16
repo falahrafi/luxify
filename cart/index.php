@@ -30,6 +30,17 @@ function price($weights, $harga)
    return $price;
 }
 
+session_start();
+
+if (!isset($_SESSION['level'])) {
+   header('location: ./login.php');
+   exit();
+}
+
+$userid = $_SESSION['id'];
+$username = $_SESSION['name'];
+$userlevel = $_SESSION['level'];
+
 ?>
 
 <!DOCTYPE html>
@@ -84,9 +95,25 @@ function price($weights, $harga)
                      <li><a class="dropdown-item" href="../contact.php">Contact Us</a></li>
                   </ul>
                </li>
-               <li class="nav-item">
+               <li class="nav-item dropdown">
                   <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link" aria-current="page" href="../admin">Admin</a>
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?= $username ?>
+                     </a>
+                     <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">
+                        <?php if ($userlevel == 'admin') : ?>
+                           <li>
+                              <a class="dropdown-item halaman-admin mb-2" href="../admin">
+                                 <i class="fas fa-user-cog me-2"></i>Halaman Admin
+                              </a>
+                           </li>
+                        <?php endif; ?>
+                        <li>
+                           <a class="dropdown-item logout" href="../logout.php">
+                              <i class="fas fa-sign-out-alt me-2"></i>Logout
+                           </a>
+                        </li>
+                     </ul>
                   </div>
                </li>
             </ul>
@@ -195,7 +222,7 @@ function price($weights, $harga)
                $totalBeli = 0;
                foreach ($rows as $cart) :
                ?>
-                  <div class="row cart-item-container p-4 mb-4 gx-md-5">
+                  <div class="row cart-item-container p-4 mb-4 gx-md-5 mx-1">
                      <div class="col-sm-3 cart-image-container p-2 text-center">
                         <img src="../<?= $cart['image']; ?>" alt="Gambar Kopi" class="cart-image">
                      </div>
@@ -225,8 +252,8 @@ function price($weights, $harga)
                endforeach;
                ?>
 
-               <div class="text-center">
-                  <p class="cart-label cart-label-green d-inline">
+               <div class="">
+                  <p class="cart-label cart-label-green d-block text-center w-100">
                      <?php
                      if ($totalBeli > 500000) {
                         $diskon = 0.05;
@@ -237,25 +264,81 @@ function price($weights, $harga)
                      }
                      ?>
                   </p>
-                  <p></p>
-                  <p class="cart-label cart-label-black d-inline">
+                  <p class="cart-label cart-label-black d-block text-center w-100">
                      Total Beli : Rp. <?= number_format($totalBeli, 0, ',', '.'); ?>
                   </p>
+                  <p class="cart-label cart-label-blue d-block text-center w-100">
+                     <?php
+                     $totalTagihan = $totalBeli - ($totalBeli * $diskon);
+                     ?>
+                     <i class="fas fa-money-bill-wave"></i>
+                     &nbsp;Total Tagihan : Rp. <?= number_format($totalTagihan, 0, ',', '.'); ?>
+                  </p>
                </div>
-               <div class="row cart-item-container cart-item-container-blue py-3 mt-4 mx-sm-3 gx-md-5">
-                  <div class="col text-center">
-                     <h5>
-                        <i class="fas fa-money-bill-wave"></i>
-                        &nbsp;Total Tagihan :
-                     </h5>
-                     <h2>
-                        <?php
-                        $totalTagihan = $totalBeli - ($totalBeli * $diskon);
-                        ?>
-                        Rp. <?= number_format($totalTagihan, 0, ',', '.'); ?>
-                     </h2>
+
+               <form action="" method="get">
+
+                  <h2 class="modal-title mt-5 mb-3">
+                     <i class="fas fa-shipping-fast"></i>
+                     &nbsp;Alamat Pengiriman
+                  </h2>
+
+                  <div class="cart-item-container alamat-pengiriman p-4 mb-4 gx-md-5">
+                     <div class="row g-3">
+                        <div class="col-12">
+                           <label for="inputNama" class="form-label"><i class="fas fa-user"></i>&ensp;Nama Penerima</label>
+                           <input type="text" name="name" class="form-control" id="inputNama" placeholder="Nama Lenkap" required>
+                        </div>
+                        <div class="col-12">
+                           <label for="inputTelp" class="form-label"><i class="fas fa-phone-alt"></i>&ensp;No. Telp.</label>
+                           <input type="text" name="telp" class="form-control" id="inputTelp" placeholder="Nomor Telepon/HP Anda" pattern="[0-9+]+" required>
+                        </div>
+                        <div class="col-lg-6">
+                           <label for="inputProvinisi" class="form-label"><i class="fas fa-globe-asia"></i>&ensp;Provinsi</label>
+                           <input type="text" name="prov" class="form-control" id="inputProvinsi" required>
+                        </div>
+                        <div class="col-lg-6">
+                           <label for="inputKota" class="form-label"><i class="fas fa-city"></i>&ensp;Kota</label>
+                           <input type="text" name="city" class="form-control" id="inputKota" required>
+                        </div>
+                        <div class="col-lg-6">
+                           <label for="inputKecamatan" class="form-label"><i class="fas fa-landmark"></i>&ensp;Kecamatan</label>
+                           <input type="text" name="kec" class="form-control" id="inputKecamatan" required>
+                        </div>
+                        <div class="col-lg-6">
+                           <label for="inputKodePos" class="form-label"><i class="fab fa-usps"></i>&ensp;Kode Pos</label>
+                           <input type="text" name="zip_code" class="form-control" id="inputKodePos" required>
+                        </div>
+                        <div class="col-12">
+                           <label for="inputAlamat" class="form-label"><i class="fas fa-map-marked-alt"></i>&ensp;Alamat</label>
+                           <input type="text" name="address" class="form-control" id="inputAlamat" placeholder="Alamat Lengkap" required>
+                        </div>
+                     </div>
                   </div>
-               </div>
+
+                  <h2 class="modal-title mt-5 mb-3">
+                     <i class="fas fa-credit-card"></i>
+                     &nbsp;Metode Pembayaran
+                  </h2>
+
+                  <div class="cart-item-container alamat-pengiriman p-4 mb-4 gx-md-5">
+                     <div class="metode-pembayaran">
+                        <select name="pembayaran" id="inputPembayaran" class="form-select" required>
+                           <option value="cod" selected>COD (Cash on Delivery)</option>
+                           <option value="bca">Transfer Bank - BCA</option>
+                           <option value="mandiri">Transfer Bank - Mandiri</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                     </div>
+                  </div>
+
+                  <button type="submit" name="bayar" class="btn btn-checkout w-100 mt-4 px-4">
+                     <i class="fas fa-wallet"></i>
+                     &ensp;Bayar Sekarang
+                  </button>
+
+               </form>
+
             </div>
          </div>
       </div>

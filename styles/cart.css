@@ -31,6 +31,64 @@
    text-decoration: none;
 }
 
+.alamat-pengiriman input,
+.alamat-pengiriman select {
+   min-height: 50px;
+   background: rgba(255, 255, 255, .7);
+   border: 1px solid #00A1FF;
+   border-radius: 8px;
+   color: #1d1d1d;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   margin-bottom: 8px;
+   transition: all .3s ease-in-out;
+}
+
+.alamat-pengiriman input:active {
+   
+}
+
+.alamat-pengiriman input:focus,
+.alamat-pengiriman select:focus {
+   background: rgba(255, 255, 255, 0.6);
+   box-shadow: 0 5px 30px 0px rgba(255, 255, 255, 0.2);
+   caret-color: #00AEEF;
+   color: #1d1d1d;
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+}
+
+.alamat-pengiriman input:hover,
+.alamat-pengiriman select:hover {
+   background: rgba(255, 255, 255, 0.8);
+}
+
+.alamat-pengiriman label {
+   font-family: 'Nunito Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+}
+.alamat-pengiriman label i {
+   background: -webkit-linear-gradient(#00AEEF, #2D388A);
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
+}
+
+
+.metode-pembayaran {
+   position: relative;
+}
+
+.metode-pembayaran i {
+   position: absolute;
+   top: 30%; right: 4%;
+   font-size: 20px;
+   color: #2D388A;
+}
+
+
 .cart-item-container {
    background: linear-gradient(to right top, rgba(0, 174, 239, .03) 0%, rgba(0, 174, 239, 0) 100%);
    border: 1px solid #1A69B4;
@@ -87,6 +145,9 @@
 }
 .cart-label-black {
    background: #1d1d1d;
+}
+.cart-label-blue {
+   background-image: linear-gradient(to right, #2D388A, #00AEEF);
 }
 .cart-label-green {
    background: linear-gradient(90deg, #00A1FF 0%, #00FF8F 100%);
