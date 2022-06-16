@@ -9,8 +9,8 @@ require_once 'cart/cart-quantity.php';
 session_start();
 
 if (!isset($_SESSION['level'])) {
-  header('location: ./login.php');
-  exit();
+   header('location: ./login.php');
+   exit();
 }
 
 $userid = $_SESSION['id'];
@@ -69,15 +69,6 @@ $userlevel = $_SESSION['level'];
                      <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
                   </ul>
                </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     <?= $username ?>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarAbout">
-                     <li><a class="dropdown-item" href="#">Level: <?= $userlevel ?></a></li>
-                     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-                  </ul>
-               </li>
                <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
@@ -90,9 +81,25 @@ $userlevel = $_SESSION['level'];
                      </span>
                   </a>
                </li>
-               <li class="nav-item">
+               <li class="nav-item dropdown">
                   <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link" aria-current="page" href="admin">Admin</a>
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?= $username ?>
+                     </a>
+                     <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">
+                        <?php if($userlevel == 'admin'): ?>
+                        <li>
+                           <a class="dropdown-item halaman-admin mb-2" href="admin">
+                              <i class="fas fa-user-cog me-2"></i>Halaman Admin
+                           </a>
+                        </li>
+                        <?php endif; ?>
+                        <li>
+                           <a class="dropdown-item logout" href="logout.php">
+                              <i class="fas fa-sign-out-alt me-2"></i>Logout
+                           </a>
+                        </li>
+                     </ul>
                   </div>
                </li>
             </ul>
