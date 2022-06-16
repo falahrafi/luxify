@@ -1,5 +1,6 @@
 body {
   background: #F5F5F5 url("../assets/images/bg-blur-4.png") no-repeat center top;
+  background-size: cover;
 }
 
 /* Ellipse Elements */
@@ -10,9 +11,9 @@ body {
 .ellipse-element {
   position: absolute;
 }
-.ellipse-b-l { top: 50%; left: 2%; z-index: -1;}
-.ellipse-b-r { top: 54%; right: 3%; z-index: -1;}
-.ellipse-b-t { top: 2%; left: 44%; z-index: -1;}
+.ellipse-b-l { top: 48%; right: 3%; z-index: -1; transform: scaleX(-1); }
+.ellipse-b-r { top: 90%; left: 2%; z-index: -1; transform: scaleX(-1); }
+.ellipse-b-t { top: 8%; left: 56%; z-index: -1; transform: scaleX(-1); }
 
 .contact-card {
   background: linear-gradient(to right top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
@@ -22,9 +23,10 @@ body {
   border-radius: 46px;
   border-top: 2px solid rgba(255, 255, 255, 0.6);
   border-left: 2px solid rgba(255, 255, 255, 0.6);
-  padding-top: 70px;
-  padding-bottom: 40px;
-  margin: 25px 0;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  margin-top: 90px;
+  margin-bottom: 90px;
 }
 
 .contact h2 {
@@ -40,7 +42,11 @@ body {
   font-weight: 700;
 }
 
-.contact-input {
+.login-input-container {
+  position: relative;
+}
+
+.login-input {
   min-height: 50px;
   background: rgba(255, 255, 255, 0.25);
   border: 1px solid #00FF8F;
@@ -60,7 +66,7 @@ body {
   
 } */
 
-.contact-input:focus {
+.login-input:focus {
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 5px 30px 0px rgba(255, 255, 255, 0.2);
   caret-color: #00AEEF;
@@ -70,11 +76,24 @@ body {
   font-weight: 400;
 }
 
-.contact-input:hover {
+.login-input:hover {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.btn-kirim-pesan {
+.btn.password-visibility:hover {
+  opacity: .7;
+}
+.btn.password-visibility:focus {
+  box-shadow: none;
+}
+
+.password-visibility {
+  position: absolute;
+  top: 14%; right: 2%;
+}
+
+.btn-login {
+  width: 100%;
   background-image: linear-gradient(to right, #2D388A, #00AEEF, #00AEEF, #2D388A);
   background-position: left;
   background-size: 200%;
@@ -87,16 +106,36 @@ body {
   margin-top: 16px;
   transition: all 0.3s ease-in-out;
 }
-.btn-kirim-pesan:hover {
+.btn-login:hover {
   background-position: right;
   color: white;
   font-size: 23px;
 }
 
+.btn-daftar-sekarang {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #1A69B4;
+  border-radius: 32px;
+  color: #1A69B4;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.btn-daftar-sekarang:hover {
+  border: none;
+  background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
+  box-shadow: 0 6px 30px 0px rgba(0, 174, 239, 0.3);
+  color: white;
+  font-size: 23px;
+}
+
 .contact-illustration {
-  margin-top: -65px;
-  margin-left: 100px;
-  width: 77%;
+  margin-top: 90px;
+  margin-right: 100px;
+  width: 82%;
 }
 
 
@@ -104,7 +143,12 @@ body {
 /* BREAKPOINTS */
 
 /* [XXL] Extra Extra large devices | 1400px < | */
-@media only screen and (min-width: 1400px) {}
+@media only screen and (min-width: 1400px) {
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
 
 /* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
 @media only screen and (max-width: 1400px) {}
