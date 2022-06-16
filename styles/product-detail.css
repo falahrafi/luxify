@@ -1,5 +1,6 @@
 body {
    background: #F5F5F5 url("../assets/images/bg-blur-2.png") no-repeat center top;
+   background-size: cover;
 }
 
 .product-detail-card {
@@ -255,7 +256,7 @@ body {
       padding-right: 0;
    }
    .btn-masukkan-keranjang {
-      font-size: 18px;
+      font-size: 20px;
    }
    .btn-masukkan-keranjang:hover {
       font-size: 19px;

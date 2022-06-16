@@ -151,7 +151,7 @@ require_once 'cart/cart-quantity.php';
 
    <section class="footer">
       <div class="container">
-         <div class="row gx-sm-5">
+         <div class="row gx-sm-5 gx-lg-2">
             <div class="col-md-4 mb-5">
                <img src="assets/images/luxify-logo-text-full-white.png" alt="" height="42">
                <p class="hero-paragraph mt-4">
@@ -199,8 +199,15 @@ require_once 'cart/cart-quantity.php';
          </div>
 
       </div>
-      <div class="footer-copyright text-center">
+
+      <!-- Small - Extra Large -->
+      <div class="footer-copyright text-center d-none d-sm-block">
          &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
+      </div>
+
+      <!-- Extra Small -->
+      <div class="footer-copyright text-center d-block d-sm-none">
+         &copy;2022 <span>Luxify
       </div>
    </section>
 

@@ -17,16 +17,17 @@ while ($row = mysqli_fetch_assoc($result)) {
    $rows[] = $row;
 }
 
-function price($weights, $harga) {
-  if ($weights == "50 ml") {
-    $price = $harga * 1;
-  } else if ($weights == "100 ml") {
-    $price = $harga * 2;
-  } else if ($weights == "150 ml") {
-   $price = $harga * 3;
-  }
+function price($weights, $harga)
+{
+   if ($weights == "50 ml") {
+      $price = $harga * 1;
+   } else if ($weights == "100 ml") {
+      $price = $harga * 2;
+   } else if ($weights == "150 ml") {
+      $price = $harga * 3;
+   }
 
-  return $price;
+   return $price;
 }
 
 ?>
@@ -310,8 +311,15 @@ function price($weights, $harga) {
          </div>
 
       </div>
-      <div class="footer-copyright text-center">
+
+      <!-- Small - Extra Large -->
+      <div class="footer-copyright text-center d-none d-sm-block">
          &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
+      </div>
+
+      <!-- Extra Small -->
+      <div class="footer-copyright text-center d-block d-sm-none">
+         &copy;2022 <span>Luxify
       </div>
    </section>
 

@@ -128,8 +128,15 @@
          </div>
 
       </div>
-      <div class="footer-copyright text-center">
+
+      <!-- Small - Extra Large -->
+      <div class="footer-copyright text-center d-none d-sm-block">
          &copy;2022 <span>Luxify &bull;</span> All Rights Reserved.
+      </div>
+
+      <!-- Extra Small -->
+      <div class="footer-copyright text-center d-block d-sm-none">
+         &copy;2022 <span>Luxify
       </div>
    </section>
 

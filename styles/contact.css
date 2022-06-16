@@ -1,5 +1,6 @@
 body {
    background: #F5F5F5 url("../assets/images/bg-blur-4.png") no-repeat center top;
+   background-size: cover;
 }
 
 /* Ellipse Elements */
