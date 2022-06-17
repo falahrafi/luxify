@@ -33,7 +33,7 @@ function price($weights, $harga)
 session_start();
 
 if (!isset($_SESSION['level'])) {
-   header('location: ./login.php');
+   header('location: ../login.php');
    exit();
 }
 
