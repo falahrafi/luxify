@@ -35,12 +35,6 @@ body {
    box-shadow: none;
 }
 
-.btn-outline-admin:hover .dropdown-user .halaman-admin {
-   background: -webkit-linear-gradient(#00AEEF, #2D388A);
-               -webkit-background-clip: text;
-               -webkit-text-fill-color: transparent;
-}
-
 .dropdown-user .halaman-admin {
    padding: .25rem 1rem;
    background: -webkit-linear-gradient(#00AEEF, #2D388A);
@@ -48,8 +42,10 @@ body {
                -webkit-text-fill-color: transparent;
    transition: all .3s ease-in-out;
 }
-.dropdown-user:hover .halaman-admin {
-   font-size: 1.1rem;
+.dropdown-user .halaman-admin:hover {
+   background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%) !important;
+   -webkit-text-fill-color: white;
+   border-radius: 30px;
 }
 
 .dropdown-user .logout {
@@ -466,12 +462,12 @@ body {
 .dropdown-item {
    border-radius: 30px;
    color: #1d1d1d;
+   transition: all 0.3s ease-in-out;
 }
 .dropdown-item:hover {
    background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
    border-radius: 30px;
    color: white;
-   transition: all 0.3s ease-in-out;
 }
 
 

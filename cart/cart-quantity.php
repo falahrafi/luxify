@@ -1,6 +1,6 @@
 <?php 
 
-   $sql = "SELECT SUM(quantity) AS 'quantityAll' FROM `carts`";
+   $sql = "SELECT SUM(quantity) AS 'quantityAll' FROM `carts` WHERE transaction_id IS NULL";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];

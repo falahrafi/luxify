@@ -76,6 +76,26 @@
                -webkit-text-fill-color: transparent;
 }
 
+.pilih-alamat select,
+.pilih-alamat select:focus {
+   background-image: linear-gradient(to right, #2D388A, #00AEEF);
+   border-radius: 40px;
+   color: white;
+   font-weight: 700;
+   padding: 0 52px 0 24px !important;
+   cursor: pointer;
+}
+.pilih-alamat select:hover {
+   background-image: linear-gradient(to right bottom, #2D388A, #00AEEF);
+   color: white;
+}
+div.pilih-alamat i {
+   color: white;
+   right: 8%;
+}
+.pilih-alamat select option {
+   color: #1d1d1d;
+}
 
 .metode-pembayaran {
    position: relative;
@@ -233,7 +253,7 @@
 
 
 .modal-card {
-   background: linear-gradient(116.86deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 100%);
+   background: linear-gradient(116.86deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 100%);
    box-shadow: 0px 4px 30px -1px rgba(0, 0, 0, 0.1);
    border-radius: 30px;
    border-top: 2px solid rgba(255, 255, 255, 0.3);

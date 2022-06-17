@@ -2,6 +2,9 @@
 
    require_once '../connection.php';
 
+    session_start();
+    $userid = $_SESSION['id'];
+
     // Mengambil data berdasarkan halaman 'details.php'
     $weights = htmlspecialchars($_POST["weights"]);
     $productID = htmlspecialchars($_GET["id"]);
@@ -25,8 +28,8 @@
     if($rowCartExists['exists'] == '1') {
         $query = "UPDATE carts SET quantity = $quantityNew WHERE id = $cartID";
     } else {
-        $query = "INSERT INTO carts (weights, quantity, product_id)
-                    VALUES ('$weights' , 1, '$productID')";
+        $query = "INSERT INTO carts (weights, quantity, product_id, transaction_id, user_id)
+                    VALUES ('$weights' , 1, '$productID', null, $userid)";
     }
 
    mysqli_query($conn, $query);

@@ -72,13 +72,15 @@ $userlevel = $_SESSION['level'];
                <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
-                     <span class="translate-middle badge my-label my-label-blue px-2">
-                        <?php if ($cartQuantityAll > 99) {
-                           $cartQuantityAll = '99+';
-                        } ?>
-                        <?= $cartQuantityAll; ?>
-                        <span class="visually-hidden">unread messages</span>
-                     </span>
+                     <?php if ($cartQuantityAll > 0): ?>
+                        <span class="translate-middle badge my-label my-label-blue px-2">
+                           <?php if ($cartQuantityAll > 99) {
+                              $cartQuantityAll = '99+';
+                           } ?>
+                           <?= $cartQuantityAll; ?>
+                           <span class="visually-hidden">unread messages</span>
+                        </span>
+                     <?php endif;?>
                   </a>
                </li>
                <li class="nav-item dropdown">
@@ -87,12 +89,18 @@ $userlevel = $_SESSION['level'];
                         <?= $username ?>
                      </a>
                      <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">
-                        <?php if($userlevel == 'admin'): ?>
                         <li>
-                           <a class="dropdown-item halaman-admin mb-2" href="admin">
-                              <i class="fas fa-user-cog me-2"></i>Halaman Admin
+                           <a class="dropdown-item halaman-admin mb-2" href="transactions">
+                              <i class="fas fa-receipt"></i>&emsp;Transaksi Saya
                            </a>
                         </li>
+                        <?php if ($userlevel == 'admin') : ?>
+                           <li>
+                              <a class="dropdown-item halaman-admin mb-2" href="admin">
+                                 <i class="fas fa-user-cog"></i>&ensp;Halaman Admin
+                              </a>
+                           </li>
+                           <hr>
                         <?php endif; ?>
                         <li>
                            <a class="dropdown-item logout" href="logout.php">

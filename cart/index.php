@@ -7,7 +7,7 @@ $sql = "SELECT carts.quantity, products.id AS 'productID', carts.id AS 'cartID',
             FROM `carts`
             INNER JOIN products ON products.id = carts.product_id
             INNER JOIN galleries ON products.id = galleries.product_id
-            WHERE type='main' AND quantity > 0
+            WHERE type='main' AND quantity > 0 AND transaction_id IS NULL
             GROUP BY products.id, carts.weights
             ORDER BY carts.id;";
 $result = mysqli_query($conn, $sql);
@@ -40,6 +40,16 @@ if (!isset($_SESSION['level'])) {
 $userid = $_SESSION['id'];
 $username = $_SESSION['name'];
 $userlevel = $_SESSION['level'];
+
+
+// Menampilkan Alamat
+$sql = "SELECT * FROM `addresses` WHERE user_id = $userid";
+$result = mysqli_query($conn, $sql);
+
+$addresses = [];
+while ($address = mysqli_fetch_assoc($result)) {
+   $addresses[] = $address;
+}
 
 ?>
 
@@ -101,12 +111,18 @@ $userlevel = $_SESSION['level'];
                         <?= $username ?>
                      </a>
                      <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">
+                        <li>
+                           <a class="dropdown-item halaman-admin mb-2" href="../transactions">
+                              <i class="fas fa-receipt"></i>&emsp;Transaksi Saya
+                           </a>
+                        </li>
                         <?php if ($userlevel == 'admin') : ?>
                            <li>
                               <a class="dropdown-item halaman-admin mb-2" href="../admin">
-                                 <i class="fas fa-user-cog me-2"></i>Halaman Admin
+                                 <i class="fas fa-user-cog"></i>&ensp;Halaman Admin
                               </a>
                            </li>
+                           <hr>
                         <?php endif; ?>
                         <li>
                            <a class="dropdown-item logout" href="../logout.php">
@@ -276,7 +292,11 @@ $userlevel = $_SESSION['level'];
                   </p>
                </div>
 
-               <form action="" method="get">
+               <form action="../transactions/add-transaction.php" method="post">
+
+                  <?php foreach ($rows as $cart) : ?>
+                     <input type="hidden" name="cart_id[]" value="<?= $cart['cartID']; ?>">
+                  <?php endforeach; ?>
 
                   <h2 class="modal-title mt-5 mb-3">
                      <i class="fas fa-shipping-fast"></i>
@@ -285,33 +305,54 @@ $userlevel = $_SESSION['level'];
 
                   <div class="cart-item-container alamat-pengiriman p-4 mb-4 gx-md-5">
                      <div class="row g-3">
-                        <div class="col-12">
-                           <label for="inputNama" class="form-label"><i class="fas fa-user"></i>&ensp;Nama Penerima</label>
-                           <input type="text" name="name" class="form-control" id="inputNama" placeholder="Nama Lenkap" required>
+                        <div class="metode-pembayaran pilih-alamat">
+                           <select id="pilihAlamat" name="pilih_alamat" class="form-select mb-0">
+                              <option id="newAddress" value="new" selected>Alamat Baru</option>
+                              <?php foreach ($addresses as $address) : ?>
+                                 <option value="<?= $address['id']; ?>">
+                                    <?=
+                                    $address['address'] . ', ' .
+                                       $address['kec'] . ', ' .
+                                       $address['city'] . ', ' .
+                                       $address['prov'] . ', ' .
+                                       $address['zip_code'] . ' ' .
+                                       '(' . $address['name'] . ' - ' . $address['telp'] . ')'
+                                    ?>
+                                 </option>
+                              <?php endforeach; ?>
+                           </select>
+                           <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="col-12">
-                           <label for="inputTelp" class="form-label"><i class="fas fa-phone-alt"></i>&ensp;No. Telp.</label>
-                           <input type="text" name="telp" class="form-control" id="inputTelp" placeholder="Nomor Telepon/HP Anda" pattern="[0-9+]+" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label for="inputProvinisi" class="form-label"><i class="fas fa-globe-asia"></i>&ensp;Provinsi</label>
-                           <input type="text" name="prov" class="form-control" id="inputProvinsi" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label for="inputKota" class="form-label"><i class="fas fa-city"></i>&ensp;Kota</label>
-                           <input type="text" name="city" class="form-control" id="inputKota" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label for="inputKecamatan" class="form-label"><i class="fas fa-landmark"></i>&ensp;Kecamatan</label>
-                           <input type="text" name="kec" class="form-control" id="inputKecamatan" required>
-                        </div>
-                        <div class="col-lg-6">
-                           <label for="inputKodePos" class="form-label"><i class="fab fa-usps"></i>&ensp;Kode Pos</label>
-                           <input type="text" name="zip_code" class="form-control" id="inputKodePos" required>
-                        </div>
-                        <div class="col-12">
-                           <label for="inputAlamat" class="form-label"><i class="fas fa-map-marked-alt"></i>&ensp;Alamat</label>
-                           <input type="text" name="address" class="form-control" id="inputAlamat" placeholder="Alamat Lengkap" required>
+
+                        <div id="alamatBaru" class="row g-3">
+                           <div class="col-12">
+                              <label for="inputNama" class="form-label"><i class="fas fa-user"></i>&ensp;Nama Penerima</label>
+                              <input type="text" name="name" class="form-control" id="inputNama" placeholder="Nama Lenkap" required>
+                           </div>
+                           <div class="col-12">
+                              <label for="inputTelp" class="form-label"><i class="fas fa-phone-alt"></i>&ensp;No. Telp.</label>
+                              <input type="text" name="telp" class="form-control" id="inputTelp" placeholder="Nomor Telepon/HP Anda" pattern="[0-9+]+" required>
+                           </div>
+                           <div class="col-lg-6">
+                              <label for="inputProvinisi" class="form-label"><i class="fas fa-globe-asia"></i>&ensp;Provinsi</label>
+                              <input type="text" name="prov" class="form-control" id="inputProvinsi" required>
+                           </div>
+                           <div class="col-lg-6">
+                              <label for="inputKota" class="form-label"><i class="fas fa-city"></i>&ensp;Kota</label>
+                              <input type="text" name="city" class="form-control" id="inputKota" required>
+                           </div>
+                           <div class="col-lg-6">
+                              <label for="inputKecamatan" class="form-label"><i class="fas fa-landmark"></i>&ensp;Kecamatan</label>
+                              <input type="text" name="kec" class="form-control" id="inputKecamatan" required>
+                           </div>
+                           <div class="col-lg-6">
+                              <label for="inputKodePos" class="form-label"><i class="fab fa-usps"></i>&ensp;Kode Pos</label>
+                              <input type="text" name="zip_code" class="form-control" id="inputKodePos" required>
+                           </div>
+                           <div class="col-12">
+                              <label for="inputAlamat" class="form-label"><i class="fas fa-map-marked-alt"></i>&ensp;Alamat</label>
+                              <input type="text" name="address" class="form-control" id="inputAlamat" placeholder="Alamat Lengkap" required>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -323,7 +364,7 @@ $userlevel = $_SESSION['level'];
 
                   <div class="cart-item-container alamat-pengiriman p-4 mb-4 gx-md-5">
                      <div class="metode-pembayaran">
-                        <select name="pembayaran" id="inputPembayaran" class="form-select" required>
+                        <select name="payment" id="inputPembayaran" class="form-select" required>
                            <option value="cod" selected>COD (Cash on Delivery)</option>
                            <option value="bca">Transfer Bank - BCA</option>
                            <option value="mandiri">Transfer Bank - Mandiri</option>
@@ -332,7 +373,7 @@ $userlevel = $_SESSION['level'];
                      </div>
                   </div>
 
-                  <button type="submit" name="bayar" class="btn btn-checkout w-100 mt-4 px-4">
+                  <button type="submit" name="bayar" id="bayarSekarang" class="btn btn-checkout w-100 mt-4 px-4">
                      <i class="fas fa-wallet"></i>
                      &ensp;Bayar Sekarang
                   </button>
@@ -458,6 +499,21 @@ $userlevel = $_SESSION['level'];
             }
          });
       }
+   </script>
+
+   <script>
+      $("#pilihAlamat").click(function() {
+         if (document.getElementById("newAddress").selected == true) {
+            $('#alamatBaru').show();
+         } else {
+            $('#alamatBaru').hide();
+         }
+      });
+      $("#bayarSekarang").click(function() {
+         if (document.getElementById("newAddress").selected == false) {
+            $('#alamatBaru').remove();
+         }
+      });
    </script>
 
 </body>
