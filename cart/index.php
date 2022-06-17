@@ -17,18 +17,8 @@ while ($row = mysqli_fetch_assoc($result)) {
    $rows[] = $row;
 }
 
-function price($weights, $harga)
-{
-   if ($weights == "50 ml") {
-      $price = $harga * 1;
-   } else if ($weights == "100 ml") {
-      $price = $harga * 2;
-   } else if ($weights == "150 ml") {
-      $price = $harga * 3;
-   }
+require_once 'price.php';
 
-   return $price;
-}
 
 session_start();
 
