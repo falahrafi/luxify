@@ -1,3 +1,16 @@
+<?php 
+  session_start();
+
+  if (!isset($_SESSION['level'])) {
+    header('location: ../login.php');
+    exit();
+  }
+
+  $userid = $_SESSION['id'];
+  $username = $_SESSION['name'];
+  $userlevel = $_SESSION['level'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
