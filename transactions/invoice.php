@@ -25,7 +25,7 @@ session_start();
 $userid = $_SESSION['id'];
 
 // Hanya tampilkan invoice dari masing-masing user
-if( $userid != $transaction['userID'] ) {
+if ($userid != $transaction['userID']) {
    header('location: ../');
    exit();
 }
@@ -85,10 +85,10 @@ $slip = $rows[0];
 <body>
 
    <section class="kopeey-hero">
-      <div class="container my-5">
+      <div class="container-lg px-2 px-sm-4 px-md-5 px-lg-0 my-5">
          <div class="row justify-content-center">
 
-            <div class="col-12 col-lg-7 cart-card p-5" id="cartContainer">
+            <div class="col-12 col-lg-7 cart-card py-5 px-3 px-sm-5"" id=" cartContainer">
                <div class="mb-4 text-center">
                   <h2>
                      <i class="fas fa-receipt"></i>
@@ -166,7 +166,7 @@ $slip = $rows[0];
                                  </button>
                               </div>
 
-                           <!-- Jika SUDAH Mengirimkan Bukti Pembayaran -->
+                              <!-- Jika SUDAH Mengirimkan Bukti Pembayaran -->
                            <?php } else { ?>
 
                               <!-- Jika Status Pembayran = PENDING -->

@@ -193,15 +193,19 @@ div.pilih-alamat i {
 
 .invoice-label-warning {
    background: #FFC107;
+   font-size: 16px !important;
 }
 .invoice-label-danger {
    background: #dc3545;
+   font-size: 16px !important;
 }
 .invoice-label-success {
    background: #28a745;
+   font-size: 16px !important;
 }
 .invoice-label-black {
    background: #1d1d1d;
+   font-size: 16px !important;
 }
 .invoice-label-blue {
    background-image: linear-gradient(to right, #2D388A, #00AEEF);
@@ -354,12 +358,9 @@ div.pilih-alamat i {
 @media only screen and (max-width: 768px) {}
 
 /* [XS] Extra small devices (phones) | < 576px | */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 596px) {
    .cart-card h4 {
       font-size: 22px;
-   }
-   .invoice-label {
-      font-size: 12px;
    }
    .btn-plus-minus, .btn-delete {
       font-size: 14.5px;
@@ -369,5 +370,60 @@ div.pilih-alamat i {
    }
    .quantity {
       font-size: 16px;
+   }
+
+   .invoice .invoice-label {
+      font-size: 30px;
+      padding: 12px 48px 12px;
+   }
+   .invoice .invoice-status {
+      padding: 4px 24px 4px !important;
+   }
+}
+
+/* Custom | < 420px | */
+@media only screen and (max-width: 420px) {
+   .cart-card h2 {
+      font-size: 26px;
+   }
+   .cart-card h4 {
+      font-size: 20px;
+   }
+   
+   .invoice .invoice-label {
+      font-size: 24px;
+      padding: 12px 48px 12px;
+   }
+   
+   .logo-bank {
+      max-width: 120px;
+   }
+   .nama-rekening {
+      font-size: 16px;
+   }
+   .no-rekening {
+      font-size: 20px;
+   }
+
+   .alamat {
+      font-size: 16px;
+   }
+}
+
+/* Custom | < 360px | */
+@media only screen and (max-width: 360px) {
+   .invoice .invoice-label {
+      font-size: 20px;
+      padding: 6px 30px 6px;
+   }
+
+   .logo-bank {
+      max-width: 100px;
+   }
+   .nama-rekening {
+      font-size: 14px;
+   }
+   .no-rekening {
+      font-size: 18px;
    }
 }

@@ -20,6 +20,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 $coffee = $rows[0];
 
+$userid = $_SESSION['id'];
+$username = $_SESSION['name'];
+$userlevel = $_SESSION['level'];
+
 ?>
 
 <!DOCTYPE html>
@@ -88,9 +92,31 @@ $coffee = $rows[0];
                      </span>
                   </a>
                </li>
-               <li class="nav-item">
+               <li class="nav-item dropdown">
                   <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link" aria-current="page" href="admin">Admin</a>
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?= $username ?>
+                     </a>
+                     <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">
+                        <li>
+                           <a class="dropdown-item halaman-admin mb-2" href="transactions">
+                              <i class="fas fa-receipt"></i>&emsp;Transaksi Saya
+                           </a>
+                        </li>
+                        <?php if ($userlevel == 'admin') : ?>
+                           <li>
+                              <a class="dropdown-item halaman-admin mb-2" href="admin">
+                                 <i class="fas fa-user-cog"></i>&ensp;Halaman Admin
+                              </a>
+                           </li>
+                           <hr>
+                        <?php endif; ?>
+                        <li>
+                           <a class="dropdown-item logout" href="logout.php">
+                              <i class="fas fa-sign-out-alt me-2"></i>Logout
+                           </a>
+                        </li>
+                     </ul>
                   </div>
                </li>
             </ul>

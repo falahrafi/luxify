@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <body>
 
    <section>
-      <div class="container">
+      <div class="container-lg px-4 px-lg-0">
          <div class="row main-container my-5 px-0">
             <div class="col-12 daftar-barang-container">
                <a href="../">
@@ -99,14 +99,14 @@ while ($row = mysqli_fetch_assoc($result)) {
                      <thead>
                         <tr>
                            <th><i class="fa-solid fa-hashtag"></i>&ensp;ID</th>
-                           <th><i class="fa-solid fa-credit-card"></i>&ensp;Pembayaran</th>
-                           <th><i class="fa-solid fa-tag"></i>&ensp;Tagihan</th>
-                           <th><i class="fa-solid fa-circle-check"></i>&ensp;Status</th>
+                           <th><i class="fa-solid fa-credit-card d-none d-lg-inline"></i>&ensp;Pembayaran</th>
+                           <th><i class="fa-solid fa-tag d-none d-lg-inline"></i>&ensp;Tagihan</th>
+                           <th><i class="fa-solid fa-circle-check d-none d-lg-inline"></i>&ensp;Status</th>
                            <th><i class="fa-solid fa-arrow-up-right-from-square"></i></th>
                         </tr>
                      </thead>
                      <tbody>
-                        <?php if(empty($rows) == 1) : ?>
+                        <?php if (empty($rows) == 1) : ?>
                            <tr>
                               <td colspan="5" class="text-center">
                                  Anda belum memiliki data transaksi.
@@ -138,9 +138,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                                  </div>
                               </td>
                               <td>
-                                 <a href="invoice.php?id=<?= $transactions['transactionID']; ?>" class="btn btn-details px-4">
+                                 <a href="invoice.php?id=<?= $transactions['transactionID']; ?>" class="btn btn-details px-3 px-lg-4">
                                     <i class="fa-solid fa-receipt"></i>
-                                    &nbsp;Invoice
+                                    <span class="d-none d-lg-inline">&nbsp;Invoice</span>
                                  </a>
                               </td>
                            </tr>

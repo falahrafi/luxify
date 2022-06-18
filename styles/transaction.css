@@ -126,3 +126,38 @@ h5 {
             -webkit-text-fill-color: transparent;
    font-weight: bold;
 }
+
+
+
+
+/* BREAKPOINTS */
+
+/* [XXL] Extra Extra large devices | 1400px < | */
+@media only screen and (min-width: 1400px) {}
+
+/* [XL] Extra large devices (large laptops and desktops) | < 1400px | */
+@media only screen and (max-width: 1400px) {}
+
+/* [LG] Large devices (laptops/desktops) | < 1200px | */
+@media only screen and (max-width: 1200px) {
+   .daftar-barang-container {
+      padding: 48px 48px;
+   }
+}
+
+/* [MD] Medium devices (landscape tablets) | < 992px | */
+@media only screen and (max-width: 992px) {
+   .table-daftar-barang thead th {
+      padding: 16px 16px 16px !important;
+   }
+}
+
+/* [SM] Small devices (portrait tablets and large phones) | < 768px | */
+@media only screen and (max-width: 768px) {}
+
+/* [XS] Extra small devices (phones) | < 576px | */
+@media only screen and (max-width: 576px) {
+   .daftar-barang-container {
+      padding: 48px 24px;
+   }
+}
