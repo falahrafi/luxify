@@ -2,9 +2,12 @@
 
    require_once '../connection.php';
 
+   session_start();
+   $userid = $_SESSION['id'];
+
    $sql = "SELECT transactions.id AS 'transactionID', 
                transactions.payment, transactions.status
-               FROM `transactions`";
+               FROM `transactions` WHERE user_id = $userid;";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];

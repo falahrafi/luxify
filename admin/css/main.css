@@ -145,6 +145,46 @@ table.table-bordered>thead>tr>th {
 }
 
 
+.status-transaksi {
+   appearance: none;
+   border: none;
+   border-radius: 30px;
+   color: white !important;
+   font-weight: bold;
+   padding: 4px 20px 4px 12px;
+   cursor: pointer;
+} .status-transaksi:hover {
+   opacity: .8;
+}
+.status-transaksi:focus {
+   outline: none;
+}
+
+.status-transaksi option {
+   color: #1d1d1d;
+}
+
+.status-yellow {
+   background: linear-gradient(to right, #f1b500, #ffc415);
+}
+.status-green {
+   background: linear-gradient(to right, #009655, #00cc74);
+}
+.status-red {
+   background: linear-gradient(to right, #af1e2d, #dc3545);
+}
+
+.status-container {
+   width: fit-content;
+}
+
+.select-arrow {
+   position: absolute;
+   top: 22%; right: 8%;
+   color: white;
+}
+
+
 /* BREAKPOINTS */
 
 /* [XXL] Extra Extra large devices | 1400px < | */

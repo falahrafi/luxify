@@ -6,7 +6,7 @@ require_once '../cart/price.php';
 // Transactions Data
 $transaction_id = $_GET['id'];
 
-$sql = "SELECT transactions.id AS 'transactionID', 
+$sql = "SELECT transactions.id AS 'transactionID', transactions.user_id AS 'userID',
                transactions.payment, transactions.status, addresses.name, addresses.telp,
                addresses.prov, addresses.city, addresses.kec, addresses.zip_code, addresses.address
                FROM `transactions`
@@ -19,6 +19,17 @@ while ($row = mysqli_fetch_assoc($result)) {
    $rows[] = $row;
 }
 $transaction = $rows[0];
+
+
+session_start();
+$userid = $_SESSION['id'];
+
+// Hanya tampilkan invoice dari masing-masing user
+if( $userid != $transaction['userID'] ) {
+   header('location: ../');
+   exit();
+}
+
 
 
 // Carts Data
@@ -36,6 +47,18 @@ $carts = [];
 while ($cart = mysqli_fetch_assoc($result)) {
    $carts[] = $cart;
 }
+
+
+// Transfer Slips Data
+$sql = "SELECT COUNT(id) AS 'jumlahSlip' FROM `transfer_slips` WHERE transaction_id = $transaction_id;";
+$result = mysqli_query($conn, $sql);
+
+$rows = [];
+while ($row = mysqli_fetch_assoc($result)) {
+   $rows[] = $row;
+}
+$slip = $rows[0];
+
 
 ?>
 
@@ -113,7 +136,8 @@ while ($cart = mysqli_fetch_assoc($result)) {
                   </div>
                </div>
 
-               <?php if ($transaction['payment'] != 'cod') : ?>
+               <!-- Jangan tampilkan jika Status Pembayran = SUCCESS -->
+               <?php if ($transaction['payment'] != 'cod' and $transaction['status'] != 'success') : ?>
 
                   <div class="mb-4 text-center">
                      <h2>
@@ -123,20 +147,53 @@ while ($cart = mysqli_fetch_assoc($result)) {
                   </div>
 
                   <div class="cart-item-container invoice py-5 mb-5 gx-md-5">
-                     <div class="row g-3 text-center">
-                        <div class="col-md-8 col-10 mx-auto mb-3">
-                           <div>
-                              <label for="formFileLg" class="form-label">Upload bukti transfer</label>
-                              <input name="image_bukti" class="form-control form-control-lg" id="formFileLg" type="file" accept="image/*,.pdf">
-                           </div>
+
+                     <form action="add-transfer-slip.php?id=<?= $transaction['transactionID']; ?>" method="POST" enctype="multipart/form-data">
+                        <div class="row g-3 text-center">
+
+                           <!-- Jika BELUM Mengirimkan Bukti Pembayaran -->
+                           <?php if ($slip['jumlahSlip'] < 1) { ?>
+                              <div class="col-md-8 col-10 mx-auto mb-3">
+                                 <div>
+                                    <label for="imageSlip" class="form-label">Upload bukti transfer</label>
+                                    <input type="file" accept="image/*" name="image" class="form-control form-control-lg" id="imageSlip" required>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8 mx-auto">
+                                 <button type="submit" name="upload" class="btn btn-upload px-4">
+                                    Upload
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                 </button>
+                              </div>
+
+                           <!-- Jika SUDAH Mengirimkan Bukti Pembayaran -->
+                           <?php } else { ?>
+
+                              <!-- Jika Status Pembayran = PENDING -->
+                              <?php if ($transaction['status'] == 'pending') { ?>
+                                 <div class="col-10 mx-auto">
+                                    <p class="my-2 alamat">
+                                    <h5 class="mb-3">Anda sudah mengirimkan bukti transfer!</h5>
+                                    Mohon menunggu admin untuk memverifikasi pembayaran anda.
+                                    Silahkan menghubungi <b>Admin X (081122344566)</b> jika terdapat kendala dalam pembayaran.
+                                    </p>
+                                 </div>
+
+                                 <!-- Jika Status Pembayran = FAILED -->
+                              <?php } else if ($transaction['status'] == 'failed') { ?>
+                                 <div class="col-10 mx-auto">
+                                    <p class="my-2 alamat">
+                                    <h5 class="mb-3">Terjadi masalah dalam proses verfifikasi pembayaran anda!</h5>
+                                    Silakan menghubungi <b>Admin X (081122344566)</b> untuk mendapatkan bantuan secepatnya.
+                                    </p>
+                                 </div>
+                              <?php } ?>
+
+                           <?php } ?>
+
                         </div>
-                        <div class="col-lg-8 mx-auto">
-                           <button type="submit" class="btn btn-upload px-4">
-                              Upload
-                              <i class="fas fa-cloud-upload-alt"></i>
-                           </button>
-                        </div>
-                     </div>
+                     </form>
+
                   </div>
                <?php endif; ?>
 

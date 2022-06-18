@@ -41,6 +41,16 @@ $(document).ready(function(){
    });
 
 
+   // Sidebar : Transaksi
+
+   $('#sidebarDataTransaksi').click(function(){
+      $('.isi-konten-admin').load('pages/data-transaksi.php');
+      $('li').removeClass('active');
+      $('#menuTransaksi').addClass('active');
+      localStorage.setItem("buttonClicked", "data-transaksi");
+   });
+
+
    // Sidebar : Pesan Pengguna
 
    $('#sidebarDataPesan').click(function(){
@@ -69,6 +79,10 @@ $(document).ready(function(){
       $('.isi-konten-admin').load('pages/tambah-gambar.php');
       $('li').removeClass('active');
       $('#menuGambar').addClass('active');
+   } else if(localStorage.getItem("buttonClicked") == "data-transaksi") {
+      $('.isi-konten-admin').load('pages/data-transaksi.php');
+      $('li').removeClass('active');
+      $('#menuTransaksi').addClass('active');
    } else if(localStorage.getItem("buttonClicked") == "data-pesan") {
       $('.isi-konten-admin').load('pages/data-contact-us.php');
       $('li').removeClass('active');

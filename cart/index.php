@@ -2,12 +2,15 @@
 
 require_once '../connection.php';
 
+session_start();
+$userid = $_SESSION['id'];
+
 $sql = "SELECT carts.quantity, products.id AS 'productID', carts.id AS 'cartID', 
             products.category, products.name, products.price, carts.weights, galleries.image
             FROM `carts`
             INNER JOIN products ON products.id = carts.product_id
             INNER JOIN galleries ON products.id = galleries.product_id
-            WHERE type='main' AND quantity > 0 AND transaction_id IS NULL
+            WHERE type='main' AND quantity > 0 AND transaction_id IS NULL AND user_id = $userid
             GROUP BY products.id, carts.weights
             ORDER BY carts.id;";
 $result = mysqli_query($conn, $sql);
@@ -19,8 +22,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 require_once 'price.php';
 
-
-session_start();
 
 if (!isset($_SESSION['level'])) {
    header('location: ../login.php');

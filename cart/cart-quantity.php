@@ -1,6 +1,9 @@
-<?php 
+<?php
 
-   $sql = "SELECT SUM(quantity) AS 'quantityAll' FROM `carts` WHERE transaction_id IS NULL";
+   session_start();
+   $userid = $_SESSION['id'];
+
+   $sql = "SELECT SUM(quantity) AS 'quantityAll' FROM `carts` WHERE transaction_id IS NULL AND user_id = $userid;";
    $result = mysqli_query($conn, $sql);
 
    $rows = [];

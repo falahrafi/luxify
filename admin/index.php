@@ -1,14 +1,14 @@
-<?php 
-  session_start();
+<?php
+session_start();
 
-  if (!isset($_SESSION['level'])) {
+if (!isset($_SESSION['level'])) {
     header('location: ../login.php');
     exit();
-  }
+}
 
-  $userid = $_SESSION['id'];
-  $username = $_SESSION['name'];
-  $userlevel = $_SESSION['level'];
+$userid = $_SESSION['id'];
+$username = $_SESSION['name'];
+$userlevel = $_SESSION['level'];
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +33,13 @@
     <link href="../styles/main.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/data-tables-custom.css" rel="stylesheet">
-    
+
     <link rel="shortcut icon" href="../favicon.ico">
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
+
 
 </head>
 
@@ -98,6 +98,24 @@
                         </a>
                         <a class="collapse-item" id="sidebarTambahGambar" role="button">
                             <i class="fas fa-plus-circle"></i>&ensp;Tambah Gambar
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" id="menuTransaksi">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTransaksi" aria-expanded="true" aria-controls="collapsePesan">
+                    <i class="fas fa-receipt"></i>
+                    <span>Transaksi</span>
+                </a>
+                <div id="collapseTransaksi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" id="sidebarDataTransaksi" role="button">
+                            <i class="fas fa-table"></i>&ensp;Data Transaksi
                         </a>
                     </div>
                 </div>

@@ -6,8 +6,6 @@ require_once 'connection.php';
 // Menghasilkan variabel '$cartQuantityAll'
 require_once 'cart/cart-quantity.php';
 
-session_start();
-
 if (!isset($_SESSION['level'])) {
    header('location: ./login.php');
    exit();
