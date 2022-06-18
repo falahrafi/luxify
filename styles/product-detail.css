@@ -157,9 +157,16 @@ body {
    color: rgba(0, 0, 0, 0.3) !important;
 }
 
-.product-detail-image {
-   max-height: 80%;
+.product-detail-image-50 {
+   max-height: 420px;
 }
+.product-detail-image-100 {
+   max-height: 520px;
+}
+.product-detail-image-150 {
+   max-height: 620px;
+}
+
 
 .product-detail-image-container {
    padding-top: 50px;
@@ -212,8 +219,14 @@ body {
 
 /* [MD] Medium devices (landscape tablets) | < 992px | */
 @media only screen and (max-width: 992px) {
-   .product-detail-image {
-      width: 58%;
+   .product-detail-image-50 {
+      max-width: 38%;
+   }
+   .product-detail-image-100 {
+      max-width: 48%;
+   }
+   .product-detail-image-150 {
+      max-width: 58%;
    }
    .product-detail-image-container {
       padding-top: 80px;

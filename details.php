@@ -149,12 +149,12 @@ $coffee = $rows[0];
                      </div>
                   </div>
 
-                  <!-- Label Berat -->
+                  <!-- Label Ukuran -->
                   <div class="col-12 mb-2">
-                     <h4>Berat</h4>
+                     <h4>Ukuran</h4>
                   </div>
 
-                  <!-- Pilihan Berat -->
+                  <!-- Pilihan Ukuran -->
                   <div class="col-lg-3 mb-lg-0 mb-3 product-info-weights">
                      <label class="options-container">
                         <input type="radio" name="weights" value="50 ml" checked>
@@ -282,6 +282,27 @@ $coffee = $rows[0];
    <script>
       var price = parseFloat("<?php echo $coffee['price']; ?>");
       console.log(price);
+
+      $(document).ready(function() {
+         $('input[type=radio][name=weights][value="150 ml"]').trigger('click');
+      });
+
+      // Mengubah Ukuran Gambar
+      $('input[type=radio][name=weights]').click(function() {
+         if (this.value == '50 ml') {
+            $('.product-detail-image').addClass('product-detail-image-50');
+            $('.product-detail-image').removeClass('product-detail-image-100');
+            $('.product-detail-image').removeClass('product-detail-image-150');
+         } else if (this.value == '100 ml') {
+            $('.product-detail-image').addClass('product-detail-image-100');
+            $('.product-detail-image').removeClass('product-detail-image-150');
+            $('.product-detail-image').removeClass('product-detail-image-50');
+         } else if (this.value == '150 ml') {
+            $('.product-detail-image').addClass('product-detail-image-150');
+            $('.product-detail-image').removeClass('product-detail-image-100');
+            $('.product-detail-image').removeClass('product-detail-image-50');
+         }
+      });
 
       // Mengubah tampilan harga kopi jika berat kopi dipilih
       $('input[type=radio][name=weights]').change(function() {
