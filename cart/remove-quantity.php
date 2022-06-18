@@ -7,7 +7,7 @@
       $productID = htmlspecialchars($_POST["product_id"]);
 
       // Mengambil data yang sama dengan data dari halaman 'details.php'
-      $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID;";
+      $cart = "SELECT * FROM `carts` WHERE weights = '$weights' AND product_id = $productID AND transaction_id IS NULL;";
       $resultCart = mysqli_query($conn, $cart);
       $rowCart = mysqli_fetch_assoc($resultCart);
       $cartID = $rowCart['id'];

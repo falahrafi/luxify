@@ -73,7 +73,7 @@ $slip = $rows[0];
    <link href="../libraries/bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet">
    <link href="../styles/main.css" rel="stylesheet">
    <link href="../styles/about.css" rel="stylesheet">
-   <link href="../styles/transaction.css" rel="stylesheet">
+   <link href="../styles/invoice.css" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

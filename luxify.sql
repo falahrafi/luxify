@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2022 at 10:43 AM
+-- Generation Time: Jun 18, 2022 at 04:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -68,15 +68,18 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `weights`, `quantity`, `product_id`, `transaction_id`, `user_id`) VALUES
-(11, '50 ml', 1, 18, 18, 1),
-(12, '50 ml', 1, 22, 18, 1),
+(11, '50 ml', 2, 18, 18, 1),
+(12, '50 ml', 3, 22, 18, 1),
 (13, '50 ml', 1, 21, 19, 1),
 (14, '100 ml', 1, 20, 20, 1),
-(15, '100 ml', 1, 25, NULL, 1),
-(16, '150 ml', 1, 21, NULL, 1),
+(15, '100 ml', 2, 25, 22, 1),
+(16, '150 ml', 4, 21, 22, 1),
 (17, '100 ml', 4, 27, 21, 2),
 (18, '50 ml', 2, 23, 21, 2),
-(19, '150 ml', 1, 22, 21, 2);
+(19, '150 ml', 1, 22, 21, 2),
+(20, '50 ml', 1, 29, 22, 1),
+(26, '50 ml', 2, 18, NULL, 1),
+(28, '50 ml', 3, 22, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +136,7 @@ CREATE TABLE `products` (
   `id` bigint(20) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` bigint(20) NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -175,9 +178,10 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `payment`, `status`, `user_id`, `address_id`) VALUES
 (18, 'cod', 'pending', 1, 19),
-(19, 'mandiri', 'pending', 1, 20),
+(19, 'mandiri', 'success', 1, 20),
 (20, 'bca', 'pending', 1, 20),
-(21, 'bca', 'failed', 2, 21);
+(21, 'bca', 'failed', 2, 21),
+(22, 'mandiri', 'pending', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -219,7 +223,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `usern`, `passw`, `level`) VALUES
 (1, 'Wibowo', 'admin', 'admin', 'admin'),
-(2, 'Abid', 'user', 'user', 'user');
+(2, 'Abid', 'user', 'user', 'user'),
+(3, 'John Doe', 'admin2', 'admin2', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -287,7 +292,7 @@ ALTER TABLE `addresses`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -311,7 +316,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `transfer_slips`
@@ -323,7 +328,7 @@ ALTER TABLE `transfer_slips`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
