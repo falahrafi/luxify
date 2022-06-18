@@ -154,7 +154,9 @@ while ($row = mysqli_fetch_assoc($result)) {
          s: selectStatus,
          id: transactionID
       }, function(data) {
-         $('.isi-konten-admin').load('pages/data-transaksi.php');
+         if (status != selectStatus) {
+            $('.isi-konten-admin').load('pages/data-transaksi.php');
+         }
       });
    }
 
