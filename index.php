@@ -70,7 +70,7 @@ $userlevel = $_SESSION['level'];
                <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
-                     <?php if ($cartQuantityAll > 0): ?>
+                     <?php if ($cartQuantityAll > 0) : ?>
                         <span class="translate-middle badge my-label my-label-blue px-2">
                            <?php if ($cartQuantityAll > 99) {
                               $cartQuantityAll = '99+';
@@ -78,12 +78,12 @@ $userlevel = $_SESSION['level'];
                            <?= $cartQuantityAll; ?>
                            <span class="visually-hidden">unread messages</span>
                         </span>
-                     <?php endif;?>
+                     <?php endif; ?>
                   </a>
                </li>
                <li class="nav-item dropdown">
-                  <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="text-center">
+                     <a class="nav-link dropdown-toggle btn-outline-admin px-3 py-1" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?= $username ?>
                      </a>
                      <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">

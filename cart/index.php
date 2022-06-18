@@ -97,8 +97,8 @@ while ($address = mysqli_fetch_assoc($result)) {
                   </ul>
                </li>
                <li class="nav-item dropdown">
-                  <div class="btn-outline-admin px-2 text-center">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="text-center">
+                     <a class="nav-link dropdown-toggle btn-outline-admin px-3 py-1" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?= $username ?>
                      </a>
                      <ul class="dropdown-menu dropdown-user" aria-labelledby="navbarUser">

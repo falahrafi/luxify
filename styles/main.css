@@ -422,11 +422,11 @@ body {
    background: linear-gradient(90deg, #2D388A 0%, #00AEEF 100%);
 }
 
-.btn-outline-admin a {
+a.btn-outline-admin {
    color: #1A69B4 !important;
    padding: 2px;
 }
-.btn-outline-admin:hover a {
+a.btn-outline-admin:hover {
    color: white !important;
 }
 
