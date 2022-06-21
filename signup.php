@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-lg-4 col-sm-10 col-11">
-          <form action="auth.php" method="POST" class="row">
+          <form action="./auth/register.php" method="POST" class="row">
 
             <div class="col-12 text-center mb-5">
               <!-- Logo: LG - XL -->
@@ -51,6 +51,12 @@
               <img src="assets/images/illustration-login.png" alt="Ilustrasi Kontak" class="img-fluid d-lg-none my-5">
             </div>
 
+            <div class="col-12">
+              <label for="inputName" class="form-label">Nama</label>
+              <div class="login-input-container">
+                <input type="text" name="name" class="form-control login-input" id="inputName" required>
+              </div>
+            </div>
             <div class="col-12">
               <label for="inputUsername" class="form-label">Username</label>
               <div class="login-input-container">
@@ -69,18 +75,8 @@
 
             <div class="col-12">
               <button type="submit" class="btn btn-login px-4 float-end">
-                Login
+                Daftar
               </button>
-            </div>
-            <div class="col-12 text-center">
-              <h5 class="mt-4">
-                Belum punya akun?
-              </h5>
-            </div>
-            <div class="col-12">
-              <a href="signup.php" type="submit" class="btn btn-daftar-sekarang px-4">
-                Daftar Sekarang
-              </a>
             </div>
           </form>
         </div>
