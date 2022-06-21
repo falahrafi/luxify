@@ -10,7 +10,7 @@
   require "connection.php";
 
   $usern = $_POST['user'];
-  $passw = $_POST['pass'];
+  $passw = md5($_POST['pass']);
 
   if (strlen($usern) < 1) {
     echo "<script language='javascript'>alert('Username atau Password tidak boleh kosong!'); location.assign('./')</script>";

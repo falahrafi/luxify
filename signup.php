@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login – Luxify</title>
+  <title>Daftar Akun – Luxify</title>
   <link href="libraries/bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
   <link href="styles/about.css" rel="stylesheet">
@@ -32,7 +32,7 @@
       <div class="row contact-card justify-content-center">
         <!-- Illustration: LG - XL -->
         <div class="col-lg-6 col-sm-10 col-11 text-center">
-          <img src="assets/images/illustration-login.png" alt="Ilustrasi Kontak" class="img-fluid contact-illustration d-none d-lg-block">
+          <img src="assets/images/illustration-mobile-login.png" alt="Ilustrasi Kontak" class="img-fluid contact-illustration d-none d-lg-block">
         </div>
 
         <div class="col-lg-4 col-sm-10 col-11">
