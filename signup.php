@@ -48,7 +48,7 @@
 
             <!-- Illustration: XS - MD -->
             <div class="col-12">
-              <img src="assets/images/illustration-login.png" alt="Ilustrasi Kontak" class="img-fluid d-lg-none my-5">
+              <img src="assets/images/illustration-mobile-login.png" alt="Ilustrasi Kontak" class="img-fluid d-lg-none my-5">
             </div>
 
             <div class="col-12">
