@@ -2,18 +2,20 @@
 
 require_once 'connection.php';
 
-// Akan mencari keseluruhan jumlah quantity pada cart
-// Menghasilkan variabel '$cartQuantityAll'
-require_once 'cart/cart-quantity.php';
+// if (!isset($_SESSION['id'])) {
+//    header('location: ./login.php');
+//    exit();
+// }
 
-if (!isset($_SESSION['level'])) {
-   header('location: ./login.php');
-   exit();
+if (isset($_SESSION['id'])) {
+   // Akan mencari keseluruhan jumlah quantity pada cart
+   // Menghasilkan variabel '$cartQuantityAll'
+   require_once 'cart/cart-quantity.php';
+
+   $userid = $_SESSION['id'];
+   $username = $_SESSION['name'];
+   $userlevel = $_SESSION['level'];
 }
-
-$userid = $_SESSION['id'];
-$username = $_SESSION['name'];
-$userlevel = $_SESSION['level'];
 
 ?>
 
@@ -70,17 +72,20 @@ $userlevel = $_SESSION['level'];
                <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="cart">
                      <i class="fas fa-shopping-cart"></i>
-                     <?php if ($cartQuantityAll > 0) : ?>
-                        <span class="translate-middle badge my-label my-label-blue px-2">
-                           <?php if ($cartQuantityAll > 99) {
-                              $cartQuantityAll = '99+';
-                           } ?>
-                           <?= $cartQuantityAll; ?>
-                           <span class="visually-hidden">unread messages</span>
-                        </span>
+                     <?php if (isset($cartQuantityAll)) : ?>
+                        <?php if ($cartQuantityAll > 0) : ?>
+                           <span class="translate-middle badge my-label my-label-blue px-2">
+                              <?php if ($cartQuantityAll > 99) {
+                                 $cartQuantityAll = '99+';
+                              } ?>
+                              <?= $cartQuantityAll; ?>
+                              <span class="visually-hidden">unread messages</span>
+                           </span>
+                        <?php endif; ?>
                      <?php endif; ?>
                   </a>
                </li>
+               <?php if (isset($_SESSION['id'])): ?>
                <li class="nav-item dropdown">
                   <div class="text-center">
                      <a class="nav-link dropdown-toggle btn-outline-admin px-3 py-1" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -108,6 +113,11 @@ $userlevel = $_SESSION['level'];
                      </ul>
                   </div>
                </li>
+               <?php else: ?>
+               <a href="login.php" class="btn btn-beli-sekarang px-4 ms-3" role="button">
+                  Login
+               </a>
+               <?php endif; ?>
             </ul>
          </div>
       </div>

@@ -2,7 +2,11 @@
 
 require_once '../connection.php';
 
-session_start();
+if (!isset($_SESSION['id'])) {
+   header('location: ../login.php');
+   exit();
+}
+
 $userid = $_SESSION['id'];
 
 $sql = "SELECT carts.quantity, products.id AS 'productID', carts.id AS 'cartID', 

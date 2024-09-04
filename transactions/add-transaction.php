@@ -2,7 +2,6 @@
 
    require_once '../connection.php';
 
-   session_start();
    $userid = $_SESSION['id'];
 
    $pilihAlamat = $_POST['pilih_alamat'];

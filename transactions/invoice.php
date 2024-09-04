@@ -21,7 +21,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 $transaction = $rows[0];
 
 
-session_start();
 $userid = $_SESSION['id'];
 
 // Hanya tampilkan invoice dari masing-masing user
